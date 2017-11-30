@@ -1,0 +1,236 @@
+body {
+  background-color: #FDFDFD;
+  font-size: 12px;
+}
+
+a {
+  color: black;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.container {
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
+  /*border: solid rgba(128, 128, 128, 0.2) 2px;*/
+}
+
+.currentfont {
+  font-family: 'Jura', sans-serif;
+  font-weight: 500;
+}
+
+.itally {
+  font-style: italic;
+}
+
+.bigger {
+  font-size: 20px;
+}
+
+.smaller {
+  font-size: 12px;
+}
+
+.fade-half {
+  opacity: 0.5;
+}
+
+.fade-bold {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.fade-none {
+  opacity: 1.0;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.grey {
+  color: grey;
+}
+
+.red {
+  color: red;
+}
+
+.shadow {
+  text-shadow: 5px 5px 5px black;
+}
+
+.navbar {
+  font-size: 15px;
+}
+
+.navbar-toggler {
+  /*border-bottom: solid grey 1px;*/
+}
+
+.navbar-toggler-icon {
+  padding-top: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.navborder {
+  /*border-bottom: solid rgba(128, 128, 128, 0.1) 1px;*/
+  /*border-style: ridge;*/
+}
+
+.navbar-brand {
+  padding: 0;
+  margin: 0;
+}
+
+.navpad {
+  padding-top: 5em;
+}
+
+.projtitle {
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(242, 242, 242, 1);
+}
+
+.logoinit {
+  background: url("./pics/WPlogo.png") no-repeat center;
+  width: auto;
+  height: 75%;
+  background-size: contain;
+}
+
+.seclogo {
+  width: 100%;
+  height: 150px;
+}
+
+/*
+.backdrop {
+  max-width: 100%;
+  width: 100%;
+  height: 200px;
+  margin-top: 30px;
+  background-size: cover;
+}*/
+
+/*.projboxit {
+  height: 250px;
+  margin-top: 15px;
+}*/
+
+.bgcover {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*.init {
+  border: 1px solid black;
+}*/
+
+.projbox {
+  /*max-width: 250px;*/
+  width: 100%;
+  height: 200px;
+  padding-bottom: 15px;
+  margin-top: 30px;
+  font-weight: bold;
+  background-size: cover;
+}
+/*
+.projbox1 {
+  background: url('./pics/poolpic1.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox2 {
+  background: url('./pics/poolpic2.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox3 {
+  background: url('./pics/poolpic10.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox4 {
+  background: url('./pics/poolpic11.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox5 {
+  background: url('./pics/poolpic12.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox6 {
+  background: url('./pics/poolpic13.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox7 {
+  background: url('./pics/poolpic14.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox8 {
+  background: url('./pics/poolpic15.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.projbox9 {
+  background: url('./pics/poolpic16.jpg') no-repeat center;
+  background-size: cover;
+}*/
+
+.socials {
+  margin: 0 10px;
+}
+
+.padtop {
+  margin-top: 30px;
+}
+
+.padtop2 {
+  margin-top: 20px;
+}
+
+.padbottom {
+  margin-bottom: 20px;
+}
+
+.padbottom2 {
+  margin-bottom: 50px;
+}
+
+.overflows {
+  overflow: hidden;
+}
+
+li {
+  padding-left: 30px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.hideit {
+  display: none;
+}
+
+.squeeze {
+  padding-left: 20px;
+  padding-right: 20px;
+}

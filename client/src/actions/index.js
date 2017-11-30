@@ -1,3 +1,10 @@
+export function setProjectChosen(proj) {
+  return {
+    type: "PROJECT_CHOSEN",
+    value: proj
+  }
+}
+
 export function setSubjectChosen(subj) {
   return {
     type: "SET_SUBJECT_CHOSEN",
