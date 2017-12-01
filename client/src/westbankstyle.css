@@ -115,29 +115,11 @@ a {
   height: 150px;
 }
 
-/*
-.backdrop {
-  max-width: 100%;
-  width: 100%;
-  height: 200px;
-  margin-top: 30px;
-  background-size: cover;
-}*/
-
-/*.projboxit {
-  height: 250px;
-  margin-top: 15px;
-}*/
-
 .bgcover {
   background-size: cover;
   width: 100%;
   height: 100%;
 }
-
-/*.init {
-  border: 1px solid black;
-}*/
 
 .projbox {
   /*max-width: 250px;*/
@@ -148,51 +130,15 @@ a {
   font-weight: bold;
   background-size: cover;
 }
-/*
-.projbox1 {
-  background: url('./pics/poolpic1.jpg') no-repeat center;
+
+.projpicbox {
+  width: 100%;
+  height: 300px;
+  padding-bottom: 15px;
+  margin-top: 30px;
+  font-weight: bold;
   background-size: cover;
 }
-
-.projbox2 {
-  background: url('./pics/poolpic2.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.projbox3 {
-  background: url('./pics/poolpic10.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.projbox4 {
-  background: url('./pics/poolpic11.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.projbox5 {
-  background: url('./pics/poolpic12.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.projbox6 {
-  background: url('./pics/poolpic13.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.projbox7 {
-  background: url('./pics/poolpic14.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.projbox8 {
-  background: url('./pics/poolpic15.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.projbox9 {
-  background: url('./pics/poolpic16.jpg') no-repeat center;
-  background-size: cover;
-}*/
 
 .socials {
   margin: 0 10px;

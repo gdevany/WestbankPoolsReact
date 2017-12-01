@@ -23,7 +23,6 @@ function Projects(props) {
           <div className="projbox">
             <div className="d-flex bgcover img-fluid" style={stylePic}></div>
           </div>
-          <div className="d-flex justify-content-center">{p.projName}</div>
         </div>
       </div>
     )
