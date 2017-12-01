@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectInd from './ProjectInd';
 
 
 function Projects(props) {
@@ -17,7 +18,7 @@ function Projects(props) {
             //   alt="project pic"
             // />
 
-      <div className="col-xs-12 col-md-4">
+      <div className="col-xs-12 col-md-4" key={i}>
         <div className="d-flex flex-column align-items-center">
           <div className="projbox">
             <div className="d-flex bgcover img-fluid" style={stylePic}></div>
@@ -30,6 +31,7 @@ function Projects(props) {
 
   return (
     <div className="container">
+      <ProjectInd />
       <div className="row">
         <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8
           justify-content-between">
