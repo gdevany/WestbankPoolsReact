@@ -9,11 +9,11 @@ function ProjectInd() {
 // <img src={require('../pics/poolpic1.jpg')} />
 const stylePic = {
   background: 'url(' + require(`../pics/poolpic2.jpg`) + ') no-repeat center',
-  backgroundSize: 'cover'
+  backgroundSize: '100% 100%'
 };
   var viewIt = "";
   viewIt = (
-
+<div className="container">
     <div className="row black padtop">
        <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
 
@@ -27,13 +27,19 @@ const stylePic = {
        </div>
 
        <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex justify-content-center">
-         <div className="projpicbox">
-           <div className="d-flex bgcover img-fluid" style={stylePic}></div>
-           <div className="d-flex bgcover img-fluid" style={stylePic}></div>
+         <div className="">
+           <img src={require('../pics/poolpic2.jpg')}
+             className="projimg"
+            />
+           <img src={require('../pics/poolpic2.jpg')}
+             style={{backgroundSize: '100% 100%'}}
+             className="projimg"
+            />
          </div>
        </div>
 
      </div>
+   </div>
   )
 
   return(

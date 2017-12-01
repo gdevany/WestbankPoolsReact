@@ -29,15 +29,17 @@ function Projects(props) {
   })
 
   return (
-    <div className="container">
+    <div>
       <ProjectInd />
+    <div className="container">
+
       <div className="row">
-        <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8
-          justify-content-between">
+        <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 justify-content-between">
             <div>{projs}</div>
         </div>
       </div>
     </div>
+  </div>
   )
 }
 

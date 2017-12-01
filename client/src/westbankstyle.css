@@ -140,6 +140,11 @@ a {
   background-size: cover;
 }
 
+.projimg {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
 .socials {
   margin: 0 10px;
 }
