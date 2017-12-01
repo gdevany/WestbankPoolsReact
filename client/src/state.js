@@ -1,6 +1,6 @@
 export default {
-  category: "",
   loggedIn: "",
+  projectChosen: "Riverside",
   projects: [
     { projName:'Riverside', url:'poolpic1.jpg' },
     { projName:'TarryTown', url:'poolpic2.jpg' },
@@ -15,27 +15,27 @@ export default {
   images: [
     {
       project: 'Riverside',
-      url: '../../client/src/pics/poolpic2.jpg',
+      url: 'poolpic2.jpg',
     },
     {
       project: 'Riverside',
-      url: '../../client/src/pics/poolpic2.jpg',
+      url: 'poolpic3.jpg',
     },
     {
       project: 'Riverside',
-      url: '../../client/src/pics/poolpic2.jpg',
+      url: 'poolpic4.jpg',
     },
     {
       project: 'Riverside',
-      url: '../../client/src/pics/poolpic2.jpg',
+      url: 'poolpic5.jpg',
     },
     {
       project: 'Riverside',
-      url: '../../client/src/pics/poolpic2.jpg',
+      url: 'poolpic6.jpg',
     },
     {
       project: 'Riverside',
-      url: '../../client/src/pics/poolpic2.jpg',
+      url: 'poolpic7.jpg',
     },
 
   ]

@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 
 
-function category(state = [], action){
-  if(action.type === "SHOW_CATEGORY"){
+function projectChosen(state = "", action){
+  if(action.type === "PROJECT_CHOSEN"){
     return action.value;
   }
   return state;
@@ -16,14 +16,14 @@ function loggedIn(state="", action) {
  }
 
  function projects(state="", action) {
-   if(action.type === "PROJECT_SELECTED") {
+   if(action.type === "PROJECT_LIST") {
      return action.value;
    }
    return state;
  }
 
  function images(state="", action) {
-   if(action.type === "PROJECT_SELECTED") {
+   if(action.type === "PROJECT_IMAGES") {
      return action.value;
    }
    return state;
@@ -31,6 +31,6 @@ function loggedIn(state="", action) {
 
 
 const rootReducer = combineReducers({
-  category,loggedIn,projects,images
+  projectChosen,loggedIn,projects,images
 });
 export default rootReducer;

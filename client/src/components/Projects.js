@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectInd from './ProjectInd';
+import ProjectInd from '../containers/ProjectIndContainer';
 
 
 function Projects(props) {
@@ -7,8 +7,7 @@ function Projects(props) {
   const projs = props.projects.map((p,i) => {
     const projPicUrl = p.url;
     const stylePic = {
-      background: 'url(' + require(`../pics/${projPicUrl}`) + ') no-repeat center',
-      backgroundSize: 'cover'
+      background: 'url(' + require(`../pics/${projPicUrl}`) + ') no-repeat center'
     };
     return(
 

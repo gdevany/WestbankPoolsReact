@@ -2,74 +2,57 @@ import React from 'react';
 // import nanogallery2 from 'nanogallery2';
 
 
-function ProjectInd() {
+function ProjectInd(props) {
 
-  // const viewIt = "";
-  // if(props.)
-// <img src={require('../pics/poolpic1.jpg')} />
-const stylePic = {
-  background: 'url(' + require(`../pics/poolpic2.jpg`) + ') no-repeat center',
-  backgroundSize: '100% 100%'
-};
   var viewIt = "";
-  viewIt = (
-<div className="container">
-    <div className="row black padtop">
-       <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
+  var projPics = "";
+  if(props.projectChosen === "") {
+    return <div></div>
+    } else {
 
-         <div className="bigger projtitle">riverside</div>
+      viewIt = (
+        <div className="container">
+          <div className="row black padtop">
+             <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
 
-         <div className="padtop2 padbottom">
-             They gave us a big check and told us to make it look nice.
-             So we took that big check and went to Vegas and had a great time.
-             Then we came back home and built them a great pool.
+               <div className="bigger projtitle">riverside</div>
+
+               <div className="padtop2 padbottom">
+                   They gave us a big check and told us to make it look nice.
+                   So we took that big check and went to Vegas and had a great time.
+                   Then we came back home and built them a great pool.
+               </div>
+             </div>
+
+             <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex justify-content-center">
+               <div className="">
+                 <img src={require('../pics/poolpic2.jpg')}
+                   className="projimg"
+                  />
+                 <img src={require('../pics/poolpic2.jpg')}
+                   style={{backgroundSize: '100% 100%'}}
+                   className="projimg"
+                  />
+               </div>
+             </div>
+
+           </div>
          </div>
-       </div>
+      )
 
-       <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex justify-content-center">
-         <div className="">
-           <img src={require('../pics/poolpic2.jpg')}
-             className="projimg"
-            />
-           <img src={require('../pics/poolpic2.jpg')}
-             style={{backgroundSize: '100% 100%'}}
-             className="projimg"
-            />
-         </div>
-       </div>
+      projPics = props.images.map((image) => {
+        if(image.project === props.projectChosen) {
+          return <img src={require(`../pics/${image.url}`)} />
+          // return image.url;
+        }
+      })
 
-     </div>
-   </div>
-  )
 
+
+    }
   return(
     <div>{viewIt}</div>
   )
 }
-
-// <div className="row black padtop">
-//    <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
-//
-//      <div className="bigger projtitle">riverside</div>
-//
-//      <div className="padtop2 padbottom">
-//          They gave us a big check and told us to make it look nice.
-//          So we took that big check and went to Vegas and had a great time.
-//          Then we came back home and built them a great pool.
-//      </div>
-//    </div>
-//
-//    <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex justify-content-center">
-//      <div id="my_nanogallery2" className="d-flex flex-column">gallery_made_with_nanogallery2
-//        <img src={require('../pics/poolpic1.jpg')} />
-//        <a href={require('../pics/poolpic1.jpg')} data-ngthumb={require('../pics/poolpic1.jpg')}>test</a>
-//        <a href="poolpic1.jpg" data-ngthumb="poolpic1.jpg">riverside1</a>
-//        <a href="poolpic2.jpg" data-ngthumb="poolpic2.jpg">riverside2</a>
-//        <a href="poolpic3.jpg" data-ngthumb="poolpic3.jpg">riverside3</a>
-//        <a href="poolpic4.jpg" data-ngthumb="poolpic4.jpg">riverside4</a>
-//      </div>
-//    </div>
-//
-//  </div>
 
 export default ProjectInd;
