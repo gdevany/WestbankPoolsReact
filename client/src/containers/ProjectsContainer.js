@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
 import Projects from '../components/Projects';
-// import {createCoupon, loadUsersCoupons} from '../actions';
-// import {deleteCoupon} from '../actions';
+import {setProjectChosen} from '../actions';
 
 
 function mapStateToProps(state) {
@@ -12,16 +11,13 @@ function mapStateToProps(state) {
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     createCoupon: (c) => {
-//       dispatch(createCoupon(c))
-//     },
-//     loadUsersCoupons: (username) => {
-//       dispatch(loadUsersCoupons(username))
-//     }
-//   }
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    set: (proj) => {
+      dispatch(setProjectChosen(proj))
+    }
+  }
+}
 
 // export default connect(mapStateToProps,mapDispatchToProps)(Projects);
-export default connect(mapStateToProps)(Projects);
+export default connect(mapStateToProps,mapDispatchToProps)(Projects);
