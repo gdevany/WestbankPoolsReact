@@ -8,6 +8,13 @@ function projectChosen(state = "", action){
   return state;
 }
 
+function pageSelected(state = "", action){
+  if(action.type === "PAGE_SELECTED"){
+    return action.value;
+  }
+  return state;
+}
+
 function loggedIn(state="", action) {
   if(action.type === "USER_LOGGED_IN") {
     return action.value;
@@ -31,6 +38,6 @@ function loggedIn(state="", action) {
 
 
 const rootReducer = combineReducers({
-  projectChosen,loggedIn,projects,images
+  projectChosen,pageSelected,loggedIn,projects,images
 });
 export default rootReducer;

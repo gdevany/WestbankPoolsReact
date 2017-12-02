@@ -5,6 +5,13 @@ export function setProjectChosen(proj) {
   }
 }
 
+export function setPageSelect(page) {
+  return {
+    type: "PAGE_SELECTED",
+    value: page
+  }
+}
+
 export function setSubjectChosen(subj) {
   return {
     type: "SET_SUBJECT_CHOSEN",

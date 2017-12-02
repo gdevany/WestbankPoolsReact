@@ -2,7 +2,7 @@ import React from 'react';
 import './westbankstyle.css';
 import AppSign from './containers/AppSignContainer';
 import Logo from './components/Logo';
-import Headings from './components/Headings';
+import Headings from './containers/HeadingsContainer';
 import Projects from './containers/ProjectsContainer';
 
 // compoonentWillMount() {

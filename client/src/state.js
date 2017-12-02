@@ -1,6 +1,10 @@
 export default {
   loggedIn: "",
   projectChosen: "",
+  pageSelected: {
+      pages: ["projects","process","faqs","about","contact"],
+      pageSelected: ""
+  },
   projects: [
     {
       projName:'Riverside',
