@@ -1,12 +1,21 @@
 import {connect} from 'react-redux';
 import Headings from '../components/Headings';
+import {setPageSelect} from '../actions';
 
 
 function mapStateToProps(state) {
   return{
-    pages: state.pageSelected.pages,
-    pageSelected: state.projects.pageSelected
+    pages: state.pages,
+    pageSelected: state.pageSelected
   }
 }
 
-export default connect(mapStateToProps)(Headings);
+function mapDispatchToProps(dispatch) {
+  return {
+    setPage: (page) => {
+      dispatch(setPageSelect(page))
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Headings);

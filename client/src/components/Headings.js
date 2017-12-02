@@ -1,20 +1,31 @@
 import React from 'react';
-import {Navbar,Nav,NavItem,} from "react-bootstrap";
+// import {Navbar,Nav,NavItem,} from "react-bootstrap";
 
 
 function Headings(props) {
+  // <a className="nav-link fade-bold" href="index.html" aria-haspopup="true" aria-expanded="false">
+  //   {p}
+  // </a>
+
+const pageClicked = (p) => {
+  props.setPage(p);
+  console.log(props.pageSelected);
+
+}
 
   var viewIt = "";
   viewIt = props.pages.map((p,i) =>{
     return (
-      <li className="nav-item dropdown key={i}">
-        <a className="nav-link fade-bold" href="index.html" aria-haspopup="true" aria-expanded="false">
-          {p}
-        </a>
+      <li className="nav-item dropdown" key={i}>
+        <div
+          className="nav-link fade-bold"
+          onClick={(e) => {e.preventDefault(); pageClicked(p)}}
+          >{p}
+        </div>
       </li>
     )
   })
-
+console.log(props.pageSelected);
   return (
     <nav className="navbar navbar-toggleable-sm d-flex justify-content-center">
         <div className="d-flex justify-content-center navborder">
