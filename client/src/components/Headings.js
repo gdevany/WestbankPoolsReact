@@ -1,31 +1,27 @@
 import React from 'react';
-// import {Navbar,Nav,NavItem,} from "react-bootstrap";
 
 
 function Headings(props) {
-  // <a className="nav-link fade-bold" href="index.html" aria-haspopup="true" aria-expanded="false">
-  //   {p}
-  // </a>
-
-const pageClicked = (p) => {
-  props.setPage(p);
-  console.log(props.pageSelected);
-
-}
 
   var viewIt = "";
+  var boldIt = "";
   viewIt = props.pages.map((p,i) =>{
+    boldIt = (props.pageSelected === p) ? "nav-link fade-bold" : "nav-link"
+console.log(`props.projectChosen:${props.pageSelected} p:${p}`);
     return (
       <li className="nav-item dropdown" key={i}>
         <div
-          className="nav-link fade-bold"
-          onClick={(e) => {e.preventDefault(); pageClicked(p)}}
+          aria-haspopup="true"
+          aria-expanded="false"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          className={boldIt}
+          onClick={(e) => {e.preventDefault(); props.setProjChosen(""); props.setPage(p)}}
           >{p}
         </div>
       </li>
     )
   })
-console.log(props.pageSelected);
   return (
     <nav className="navbar navbar-toggleable-sm d-flex justify-content-center">
         <div className="d-flex justify-content-center navborder">
@@ -43,25 +39,3 @@ console.log(props.pageSelected);
 }
 
 export default Headings;
-
-// var viewIt = "";
-//   viewIt = props.pages.map((p,i) => {
-//     return(
-//     <NavItem key={i}>{p}</NavItem>
-//     )
-//   })
-//
-//   return (
-//     <Navbar collapseOnSelect>
-//       <Navbar.Header>
-//         <Navbar.Toggle />
-//       </Navbar.Header>
-//       <Navbar.Collapse>
-//         <Nav className="displayInline d-flex">
-//           {viewIt}
-//         </Nav>
-//       </Navbar.Collapse>
-//     </Navbar>
-//   )
-// }
-// onClick={props.onSignOut}

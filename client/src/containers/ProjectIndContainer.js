@@ -1,11 +1,10 @@
 import {connect} from 'react-redux';
 import ProjectInd from '../components/ProjectInd';
+import {setProjectChosen} from '../actions';
 
 function mapStateToProps(state) {
   var projChosen = "";
   state.projects.map(p => {
-    // console.log(p);
-    // console.log(`p:${p.projName} state.projectChosen:${state.projectChosen}`);
     if(p.projName === state.projectChosen) {
       projChosen = p;
     }
@@ -14,9 +13,18 @@ function mapStateToProps(state) {
 
   return {
     projectInfo: projChosen,
+    pageSelected: state.pageSelected,
     projectChosen: state.projectChosen,
     images: state.images,
   }
 }
 
-export default connect(mapStateToProps)(ProjectInd)
+function mapDispatchToProps(dispatch) {
+  return {
+    setProjChosen: (proj) => {
+      dispatch(setProjectChosen(proj))
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProjectInd)

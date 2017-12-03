@@ -2,20 +2,24 @@ import React from 'react';
 
 
 function ProjectInd(props) {
-  var projPics = "";
-  if(props.projectChosen === "") {
+  var viewIt = "";
+  console.log(`projectChosen: ${props.projectChosen}`);
+  if(props.projectChosen !== "" && props.pageSelected === "projects") {
+
+    viewIt = props.images.map((image,i) => {
+      if(image.project === props.projectChosen) {
+
+        return (<img
+          src={require(`../pics/${image.url}`)}
+          className="projimg"
+          alt="project pics"
+          key={i} />)
+      } else return ""
+    })
+
+  } else {
     return <div></div>
-    } else {
-      projPics = props.images.map((image,i) => {
-        if(image.project === props.projectChosen) {
-          return (<img
-            src={require(`../pics/${image.url}`)}
-            className="projimg"
-            alt="project pics"
-            key={i} />)
-        } else return ""
-      })
-    }
+  }
 
   return(
     <div className="container">
@@ -25,7 +29,7 @@ function ProjectInd(props) {
           <div className="padtop2 padbottom">{props.projectInfo.desc}</div>
         </div>
         <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex justify-content-center">
-            <div>{projPics}</div>
+            <div>{viewIt}</div>
         </div>
       </div>
     </div>

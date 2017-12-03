@@ -1,7 +1,7 @@
 export default {
   loggedIn: "",
   projectChosen: "",
-  pageSelected: "",
+  pageSelected: "projects",
   pages: ["projects","process","faqs","about","contact"],
   
   projects: [

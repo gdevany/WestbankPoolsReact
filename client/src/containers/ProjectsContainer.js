@@ -7,13 +7,15 @@ function mapStateToProps(state) {
   return {
     projects: state.projects,
     images: state.images,
-    loggedIn: state.loggedIn
+    loggedIn: state.loggedIn,
+    pageSelected: state.pageSelected,
+    
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    set: (proj) => {
+    setProjChosen: (proj) => {
       dispatch(setProjectChosen(proj))
     }
   }
