@@ -19,6 +19,13 @@ export function setSubjectChosen(subj) {
   }
 }
 
+export function setViewerList(l) {
+  return {
+    type: "VIEWER_LIST",
+    value: l
+  }
+}
+
 export function setSearchCoupons(txt) {
   return {
     type: "SEARCH_COUPONS",

@@ -22,6 +22,13 @@ function pages(state = [], action){
   return state;
 }
 
+function viewerList(state = [], action) {
+  if(action.type === "VIEWER_LIST") {
+    return action.value;
+  }
+  return state;
+}
+
 function loggedIn(state="", action) {
   if(action.type === "USER_LOGGED_IN") {
     return action.value;
@@ -45,6 +52,6 @@ function loggedIn(state="", action) {
 
 
 const rootReducer = combineReducers({
-  projectChosen,pages,pageSelected,loggedIn,projects,images
+  projectChosen,pages,viewerList,pageSelected,loggedIn,projects,images
 });
 export default rootReducer;

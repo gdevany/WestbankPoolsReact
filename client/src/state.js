@@ -3,7 +3,7 @@ export default {
   projectChosen: "",
   pageSelected: "projects",
   pages: ["projects","process","faqs","about","contact"],
-  
+  viewerList: [],
   projects: [
     {
       projName:'Riverside',

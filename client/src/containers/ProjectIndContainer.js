@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import ProjectInd from '../components/ProjectInd';
-import {setProjectChosen} from '../actions';
+import {setProjectChosen, setViewerList} from '../actions';
 
 function mapStateToProps(state) {
   var projChosen = "";
@@ -16,6 +16,7 @@ function mapStateToProps(state) {
     pageSelected: state.pageSelected,
     projectChosen: state.projectChosen,
     images: state.images,
+    viewerList: state.viewerList
   }
 }
 
@@ -23,6 +24,9 @@ function mapDispatchToProps(dispatch) {
   return {
     setProjChosen: (proj) => {
       dispatch(setProjectChosen(proj))
+    },
+    setViewerList: (l) => {
+      dispatch(setViewerList(l))
     }
   }
 }
