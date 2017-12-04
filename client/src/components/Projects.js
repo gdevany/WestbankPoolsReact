@@ -21,7 +21,11 @@ function Projects(props) {
                 <div
                   className="d-flex bgcover img-fluid"
                   style={stylePic}
-                  onClick={ (e) => {e.preventDefault(); props.setProjChosen(p.projName)}}>
+                  onClick={ (e) => {
+                    e.preventDefault();
+                    props.setProjChosen(p.projName)
+                    props.setViewerList([])
+                  }}>
                 </div>
                 <div className="d-flex justify-content-center">{p.projName}</div>
               </div>
