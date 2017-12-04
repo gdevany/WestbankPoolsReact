@@ -5,22 +5,24 @@ import ImageGallery from 'react-image-gallery';
 
 function ImageViewer(props) {
   // console.log(props);
-  console.log(props.imageList);
+  console.log(props);
   var viewIt = "";
   var images = [];
+
   props.imageList.map(i => {
     return(
-    images = [...images, {original:require(`../pics/${i.url}`),
-      thumbnail:require(`../pics/${i.url}`)}]
+      images = [...images, {original:require(`../pics/${i.url}`),
+        thumbnail:require(`../pics/${i.url}`)}]
     )
   })
 
-  if(props.projectChosen !== "" && props.imageList.length > 1) {
+  if(props.projectChosen !== "" && props.viewerList.length > 1) {
     viewIt = (
       <ImageGallery items={images} />
     )
-  } else viewIt = <div></div>
-
+  } else {
+    viewIt = <div></div>
+  }
 
   return (
     <div>

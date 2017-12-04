@@ -15,7 +15,11 @@ function Headings(props) {
           data-toggle="collapse"
           data-target=".navbar-collapse.show"
           className={boldIt}
-          onClick={(e) => {e.preventDefault(); props.setProjChosen(""); props.setPage(p)}}
+          onClick={(e) => {
+            e.preventDefault();
+            props.setProjChosen("");
+            props.setViewerList([]);
+            props.setPage(p)}}
           >{p}
         </div>
       </li>

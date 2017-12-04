@@ -2,6 +2,7 @@ import React from 'react';
 import ImageViewer from '../containers/ImageViewerContainer';
 
 function ProjectInd(props) {
+  console.log(`proj chosen: ${props.projectChosen}`)
   var viewIt = "";
   var imageList = "";
 
@@ -26,11 +27,12 @@ function ProjectInd(props) {
   return(
     <div className="container">
       <div className="row black padtop">
+        <div className="projimg"><ImageViewer imageList={props.viewerList} /></div>
+
         <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
           <div className="bigger projtitle">{props.projectChosen}</div>
           <div className="padtop2 padbottom">{props.projectInfo.desc}</div>
         </div>
-        <div><ImageViewer imageList={props.viewerList} /></div>
         <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex justify-content-center">
             <div>{viewIt}</div>
         </div>
