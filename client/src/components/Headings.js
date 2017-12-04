@@ -7,7 +7,6 @@ function Headings(props) {
   var boldIt = "";
   viewIt = props.pages.map((p,i) =>{
     boldIt = (props.pageSelected === p) ? "nav-link fade-bold" : "nav-link"
-console.log(`props.projectChosen:${props.pageSelected} p:${p}`);
     return (
       <li className="nav-item dropdown" key={i}>
         <div

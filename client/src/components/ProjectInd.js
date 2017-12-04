@@ -3,7 +3,6 @@ import React from 'react';
 
 function ProjectInd(props) {
   var viewIt = "";
-  console.log(`projectChosen: ${props.projectChosen}`);
   if(props.projectChosen !== "" && props.pageSelected === "projects") {
 
     viewIt = props.images.map((image,i) => {

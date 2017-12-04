@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Process(props) {
+function Faqs(props) {
    var viewIt = "";
-  if(props.pageSelected === 'process') {
+  if(props.pageSelected === 'faqs') {
     viewIt = <div>Hello</div>
   } else viewIt = <div></div>
 
@@ -11,4 +11,4 @@ function Process(props) {
   )
 }
 
-export default Process;
+export default Faqs;

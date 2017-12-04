@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Process from '../components/Process';
+import Faqs from '../components/Faqs';
 
 
 function mapStateToProps(state) {
@@ -9,4 +9,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Process);
+export default connect(mapStateToProps)(Faqs);

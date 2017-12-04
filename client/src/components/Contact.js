@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Process(props) {
+function Contact(props) {
    var viewIt = "";
-  if(props.pageSelected === 'process') {
+  if(props.pageSelected === 'contact') {
     viewIt = <div>Hello</div>
   } else viewIt = <div></div>
 
@@ -11,4 +11,4 @@ function Process(props) {
   )
 }
 
-export default Process;
+export default Contact;

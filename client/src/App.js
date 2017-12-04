@@ -4,6 +4,11 @@ import AppSign from './containers/AppSignContainer';
 import Logo from './components/Logo';
 import Headings from './containers/HeadingsContainer';
 import Projects from './containers/ProjectsContainer';
+import Process from './containers/ProcessContainer';
+import Faqs from './containers/FaqsContainer';
+import AboutUs from './containers/AboutUsContainer';
+import Contact from './containers/ContactContainer';
+
 
 // compoonentWillMount() {
 //   loadSubjects();
@@ -18,6 +23,10 @@ function App() {
       <Logo />
       <Headings />
       <Projects />
+      <Process />
+      <Faqs />
+      <AboutUs />
+      <Contact />
     </div>
   )
 }
