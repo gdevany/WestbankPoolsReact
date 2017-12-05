@@ -4,7 +4,6 @@ import ImageViewer from '../containers/ImageViewerContainer';
 
 // Only show if project has been selected (from Projects.js) and page = projects.
 function ProjectInd(props) {
-  console.log(`proj chosen: ${props.projectChosen}`)
   var viewIt = "";
   var imageList = "";
 
