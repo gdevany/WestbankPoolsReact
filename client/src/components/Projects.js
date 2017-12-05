@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectInd from '../containers/ProjectIndContainer';
 
-
+// Only show if 'projects' page is selected (default)
 function Projects(props) {
 
   var viewIt = "";
@@ -10,6 +10,7 @@ function Projects(props) {
   if(props.pageSelected === "projects" || props.pageSelected === "") {
       projs = props.projects.map((p,i) => {
 
+      //set background image to each project image
       const stylePic = {
         background: 'url(' + require(`../pics/${p.url}`) + ') no-repeat center'
       };

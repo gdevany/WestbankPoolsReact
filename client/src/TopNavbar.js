@@ -24,7 +24,7 @@ const TopNavbar = (props) => {
   }
 
   return (
-    <Navbar inverse collapseOnSelect>
+    <Navbar inverse collapseOnSelect className="fade-half">
       <Navbar.Header>
         <Navbar.Toggle />
       </Navbar.Header>

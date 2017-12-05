@@ -11,8 +11,6 @@ import Contact from './containers/ContactContainer';
 
 
 // compoonentWillMount() {
-//   loadSubjects();
-//   loadSubtopics();
 //
 // }
 

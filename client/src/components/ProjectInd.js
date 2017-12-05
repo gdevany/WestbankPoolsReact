@@ -1,6 +1,8 @@
 import React from 'react';
 import ImageViewer from '../containers/ImageViewerContainer';
 
+
+// Only show if project has been selected (from Projects.js) and page = projects.
 function ProjectInd(props) {
   console.log(`proj chosen: ${props.projectChosen}`)
   var viewIt = "";
@@ -33,8 +35,9 @@ function ProjectInd(props) {
           <div className="bigger projtitle">{props.projectChosen}</div>
           <div className="padtop2 padbottom">{props.projectInfo.desc}</div>
         </div>
-        <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex justify-content-center">
-            <div>{viewIt}</div>
+        <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex flex-column justify-content-center">
+          <div>Click image to start ImageViewer</div>
+          <div>{viewIt}</div>
         </div>
       </div>
     </div>

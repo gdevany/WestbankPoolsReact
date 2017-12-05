@@ -2,13 +2,13 @@ import React from 'react';
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
 
-
+// only show if project image is selected from ProjectInd
 function ImageViewer(props) {
-  // console.log(props);
   console.log(props);
   var viewIt = "";
   var images = [];
 
+  // map out images for the projectSelected (props.imageList from ProjectInd)
   props.imageList.map(i => {
     return(
       images = [...images, {original:require(`../pics/${i.url}`),
@@ -33,7 +33,7 @@ function ImageViewer(props) {
 
 export default ImageViewer;
 
-
+// THIS IS FUNCTIONING IMAGEVIEWER WITHOUT REACT-IMAGE-GALLERY INSTALLED
 // function ImageViewer(props) {
 //   // console.log(props);
 //
