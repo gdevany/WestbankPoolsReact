@@ -16,7 +16,7 @@ import Contact from './containers/ContactContainer';
 
 function App() {
   return (
-    <div className="App currentfont">
+    <div className="App currentfont padbottom2">
       <AppSign />
       <Logo />
       <Headings />

@@ -16,7 +16,7 @@ function Projects(props) {
       };
 
       viewIt = (
-          <div className="col-xs-12 col-md-4" key={i}>
+          <div className="col-xs-12 col-md-4 padbottom2" key={i}>
             <div className="d-flex flex-column align-items-center">
               <div className="projbox">
                 <div
@@ -28,7 +28,7 @@ function Projects(props) {
                     props.setViewerList([])
                   }}>
                 </div>
-                <div className="d-flex justify-content-center">{p.projName}</div>
+                <div className="d-flex justify-content-center padtop">{p.projName}</div>
               </div>
             </div>
           </div>
