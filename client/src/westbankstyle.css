@@ -139,10 +139,6 @@ a {
   padding: 10px;
 }
 
-.socials {
-  margin: 0 10px;
-}
-
 .padtop {
   margin-top: 10px;
 }
@@ -157,6 +153,11 @@ a {
 
 .padbottom2 {
   margin-bottom: 30px;
+}
+
+.padsides {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .overflows {

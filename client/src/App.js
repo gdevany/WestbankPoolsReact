@@ -8,7 +8,7 @@ import Process from './containers/ProcessContainer';
 import Faqs from './containers/FaqsContainer';
 import AboutUs from './containers/AboutUsContainer';
 import Contact from './containers/ContactContainer';
-
+import Footer from './components/Footer';
 
 // compoonentWillMount() {
 //
@@ -25,6 +25,8 @@ function App() {
       <Faqs />
       <AboutUs />
       <Contact />
+      <Footer />
+
     </div>
   )
 }

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 // import "./index.css";
 // import 'bootstrap/dist/css/bootstrap.css';
-
+import "font-awesome/css/font-awesome.css";
 import "./westbankstyle.css";
 import {Provider} from 'react-redux';
 import store from './store';
