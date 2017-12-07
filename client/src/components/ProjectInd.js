@@ -15,7 +15,7 @@ function ProjectInd(props) {
         return (<img
           onClick={() => {props.setViewerList(imageList)}}
           src={require(`../pics/${image.url}`)}
-          className="projimg"
+          className="projIndimg"
           alt="project pics"
           key={i} />)
       } else return ""
@@ -28,7 +28,7 @@ function ProjectInd(props) {
   return(
     <div className="container">
       <div className="row black padtop">
-        <div className="projimg"><ImageViewer imageList={props.viewerList} /></div>
+        <div className="projIndimg"><ImageViewer imageList={props.viewerList} /></div>
 
         <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
           <div className="bigger projtitle">{props.projectChosen}</div>

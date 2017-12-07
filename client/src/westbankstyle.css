@@ -137,9 +137,16 @@ a {
   background-size: cover;
 }
 
-.projimg {
+.projIndimg {
   width: 100%;
   margin-bottom: 30px;
+  padding: 10px;
+}
+
+.projimg {
+  width: 100%;
+  height: 200px;
+  /*margin-bottom: 30px;*/
   padding: 10px;
 }
 

@@ -6,6 +6,31 @@ export default {
   viewerList: [],
   projects: [
     {
+      projName:'wildwood',
+      url:'pp1.jpg',
+      desc: 'They gave us a big check and told us to make it look nice.  So we took that big check and went to Vegas and had a great time.  Then we came back home and built them a great pool.'
+    },
+    {
+      projName:'yoyo',
+      url:'pp11.jpg',
+      desc: 'They gave us a big check and told us to make it look nice.  So we took that big check and went to Vegas and had a great time.  Then we came back home and built them a great pool.'
+    },
+    {
+      projName:'saywhat',
+      url:'pp21.jpg',
+      desc: 'They gave us a big check and told us to make it look nice.  So we took that big check and went to Vegas and had a great time.  Then we came back home and built them a great pool.'
+    },
+    {
+      projName:'dontknow',
+      url:'pp31.jpg',
+      desc: 'They gave us a big check and told us to make it look nice.  So we took that big check and went to Vegas and had a great time.  Then we came back home and built them a great pool.'
+    },
+    {
+      projName:'hesonthird',
+      url:'pp41.jpg',
+      desc: 'They gave us a big check and told us to make it look nice.  So we took that big check and went to Vegas and had a great time.  Then we came back home and built them a great pool.'
+    },
+    {
       projName:'riverside',
       url:'poolpic1.jpg',
       desc: 'They gave us a big check and told us to make it look nice.  So we took that big check and went to Vegas and had a great time.  Then we came back home and built them a great pool.'
@@ -46,6 +71,47 @@ export default {
     },
   ],
   images: [
+    {
+      project: 'wildwood',
+      url: 'pp2.jpg',
+    },
+    {
+      project: 'wildwood',
+      url: 'pp3.jpg',
+    },
+    {
+      project: 'yoyo',
+      url: 'pp12.jpg',
+    },
+    {
+      project: 'yoyo',
+      url: 'pp13.jpg',
+    },
+    {
+      project: 'saywhat',
+      url: 'pp22.jpg',
+    },
+    {
+      project: 'saywhat',
+      url: 'pp23.jpg',
+    },
+    {
+      project: 'dontknow',
+      url: 'pp32.jpg',
+    },
+    {
+      project: 'dontknow',
+      url: 'pp33.jpg',
+    },
+    {
+      project: 'hesonthird',
+      url: 'pp42.jpg',
+    },
+    {
+      project: 'hesonthird',
+      url: 'pp43.jpg',
+    },
+
     {
       project: 'riverside',
       url: 'poolpic2.jpg',
