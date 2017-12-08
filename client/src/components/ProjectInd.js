@@ -8,10 +8,10 @@ function ProjectInd(props) {
   var imageList = "";
 
   if(props.projectChosen !== "" && props.pageSelected === "projects") {
+    // Map thru project pics to show
     viewIt = props.images.map((image,i) => {
       if(image.project === props.projectChosen) {
         imageList = [...imageList, image];
-        // console.log(imageList);
         return (<img
           onClick={() => {props.setViewerList(imageList)}}
           src={require(`../pics/${image.url}`)}

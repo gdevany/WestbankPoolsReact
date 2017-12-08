@@ -19,7 +19,7 @@ function Process(props) {
               </div>
             </div>
             <div className="row">
-              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop2">
+              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big black">plan it</div>
                 <div className="">
                   Planning phase can really be broken down to 3 steps. First we
@@ -34,7 +34,7 @@ function Process(props) {
                   facilitate the loan process.
                 </div>
               </div>
-              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop2">
+              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big black">let's do this</div>
                 <div className="">
                   Breaking ground is exciting. This means theres no turning back
@@ -45,7 +45,7 @@ function Process(props) {
                   each working day.
                 </div>
               </div>
-              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop2">
+              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big black">build it</div>
                 <div className="">
                   The entire construction process involves many contractors- site
@@ -55,7 +55,7 @@ function Process(props) {
                   and bonded contractors which we've worked with for many years.
                 </div>
               </div>
-              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop2">
+              <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big black">when can we jump in?</div>
                 <div className="">
                   When the construction is in the final stages, we will be on-site
@@ -79,7 +79,7 @@ function Process(props) {
       <div className="container">
         <div className="row">
           <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 justify-content-between">
-            <div className="bigger projtitle d-flex text-left padtop2">
+            <div className="bigger projtitle d-flex text-left padtop3">
               process
             </div>
             <div>{viewIt}</div>

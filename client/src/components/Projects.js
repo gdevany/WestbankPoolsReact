@@ -16,7 +16,7 @@ function Projects(props) {
       };
 
       viewIt = (
-          <div className="col-xs-12 offset-sm-2 col-sm-8 offset-md-0 col-md-4 padbottom2" key={i}>
+          <div className="col-xs-12 offset-sm-3 col-sm-6 offset-md-0 col-md-4 padbottom2" key={i}>
             <div className="d-flex flex-column">
               <div className="projbox">
                 <img
@@ -45,7 +45,7 @@ function Projects(props) {
         <div className="container">
           <div className="row">
             <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
-              <div className="bigger d-flex text-left padtop2">
+              <div className="bigger d-flex text-left padtop3">
                 projects
               </div>
             </div>
