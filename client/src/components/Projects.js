@@ -10,13 +10,8 @@ function Projects(props) {
   if(props.pageSelected === "projects" || props.pageSelected === "") {
       projs = props.projects.map((p,i) => {
 
-      //set background image to each project image
-      const stylePic = {
-        background: 'url(' + require(`../pics/${p.url}`) + ') no-repeat center'
-      };
-
       viewIt = (
-          <div className="col-xs-12 offset-sm-3 col-sm-6 offset-md-0 col-md-4 padbottom2" key={i}>
+          <div className="col-xs-12 offset-sm-0 col-sm-6 offset-md-0 col-md-4 padbottom2" key={i}>
             <div className="d-flex flex-column">
               <div className="projbox">
                 <img

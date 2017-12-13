@@ -9,6 +9,8 @@ import Faqs from './containers/FaqsContainer';
 import AboutUs from './containers/AboutUsContainer';
 import Contact from './containers/ContactContainer';
 import Footer from './components/Footer';
+import AddImages from './components/AddImages';
+const clKey = 934548452896616;
 
 // compoonentWillMount() {
 //

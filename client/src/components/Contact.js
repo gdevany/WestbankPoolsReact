@@ -3,12 +3,6 @@ import React from 'react';
 function Contact(props) {
   var viewIt = "";
 
-  <div className="fade-half">
-    <i className="fa fa-facebook-square fa-2x padsides padtop2"></i>
-    <i className="fa fa-twitter-square fa-2x padsides padtop2"></i>
-    <i className="fa fa-yelp fa-2x padsides padtop2"></i>
-  </div>
-
   if(props.pageSelected === 'contact') {
     viewIt = (
       <div>
@@ -29,7 +23,7 @@ function Contact(props) {
                   <i className="fa fa-phone" aria-hidden="true"></i>phone
                 </div>
                 <div className="">
-                  512-555-5555
+                  512-217-8004
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">

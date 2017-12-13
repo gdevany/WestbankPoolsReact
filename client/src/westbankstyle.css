@@ -140,14 +140,15 @@ a {
 .projIndimg {
   width: 100%;
   margin-bottom: 30px;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .projimg {
-  width: 100%;
+  width: 220px;
   height: 200px;
   /*margin-bottom: 30px;*/
   padding: 10px;
+  image-rendering: pixelated;
 }
 
 .padtop {
