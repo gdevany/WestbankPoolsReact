@@ -23,6 +23,7 @@ function Projects(props) {
                   src={require(`../pics/${p.url}`)}
                   className="projimg"
                   alt="project pics"
+                  style={{cursor:'pointer'}}
                   key={i}
                   />
                 <div className="d-flex justify-content-center padtop">{p.projName}</div>

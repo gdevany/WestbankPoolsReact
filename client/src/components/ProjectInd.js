@@ -17,6 +17,7 @@ function ProjectInd(props) {
           src={require(`../pics/${image.url}`)}
           className="projIndimg"
           alt="project pics"
+          style={{cursor:'pointer'}}
           key={i} />)
       } else return ""
     })

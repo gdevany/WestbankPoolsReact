@@ -10,6 +10,8 @@ class AddImages extends React.Component {
     super(props);
 
     this.state = {
+      projName: "riverside",
+      projImageName: "riverside2",
       uploadedFile: null,
       uploadedFileCloudinaryUrl: ''
     };
@@ -27,7 +29,8 @@ class AddImages extends React.Component {
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
                      .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
                      .field('file', file)
-                     .field('tags', ['testIt']);
+                     .field('tags', ['testIt'])
+                     .field('public_id', `wbp/projects/${this.state.projName}/${this.state.projImageName}`);
 
     upload.end((err, response) => {
       if (err) {
@@ -58,7 +61,11 @@ class AddImages extends React.Component {
           {this.state.uploadedFileCloudinaryUrl === '' ? null :
           <div>
             <p>{this.state.uploadedFile.name}</p>
-            <img src={this.state.uploadedFileCloudinaryUrl} alt="test" />
+            <img
+              src={this.state.uploadedFileCloudinaryUrl}
+              alt="test"
+              className="projimg"
+              />
           </div>}
         </div>
       </form>

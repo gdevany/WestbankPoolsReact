@@ -9,7 +9,8 @@ import Faqs from './containers/FaqsContainer';
 import AboutUs from './containers/AboutUsContainer';
 import Contact from './containers/ContactContainer';
 import Footer from './components/Footer';
-import AddImages from './components/AddImages';
+// import AddImages from './components/AddImages';
+import CreateNewProject from './components/CreateNewProject';
 // const clKey = 934548452896616;
 
 // compoonentWillMount() {
@@ -28,7 +29,7 @@ function App() {
       <AboutUs />
       <Contact />
       <Footer />
-      <AddImages />
+      <CreateNewProject />
     </div>
   )
 }

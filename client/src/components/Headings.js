@@ -17,6 +17,7 @@ function Headings(props) {
           data-toggle="collapse"
           data-target=".navbar-collapse.show"
           className={boldIt}
+          style={{cursor:'pointer'}}
           onClick={(e) => {
             e.preventDefault();
             props.setProjChosen("");
