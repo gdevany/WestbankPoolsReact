@@ -9,7 +9,6 @@ class CreateNewProject extends React.Component {
         projName: "",
         projImages: [],
         projectNamed: false,
-        mainImageSet: false,
       }
     };
   }
@@ -42,16 +41,8 @@ class CreateNewProject extends React.Component {
       </form>
     </div>
     );
-    console.log(this.state.mainImageSet);
 
     var addImageBox = "";
-    var message = "";
-
-    if(!this.state.mainImageSet) {
-      message = 'drag & drop, or click here to select your MAIN project image'
-    } else {
-      message = 'Now select your project images and place here'
-    }
 
     if(!this.state.projectNamed) {
         addImageBox = <div></div>
@@ -59,14 +50,8 @@ class CreateNewProject extends React.Component {
         addImageBox =
           <AddImages
             project={this.state.projects.projName}
-            message={message}
             />;
-          console.log('here');
-          if(this.state.mainImageSet === false) this.setState({ mainImageSet: true});
       }
-
-
-
 
     return (
       <div>

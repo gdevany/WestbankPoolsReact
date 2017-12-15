@@ -11,7 +11,8 @@ class AddImages extends React.Component {
 
     this.state = {
       uploadedFile: null,
-      uploadedFileCloudinaryUrl: ''
+      uploadedFileCloudinaryUrl: '',
+      selectedMainImage: false,
     };
   }
 
@@ -24,10 +25,16 @@ class AddImages extends React.Component {
   }
 
   handleImageUpload(file) {
+    var tag = `${this.props.project}`;
+    if (this.state.selectedMainImage === false) {
+      tag = `${this.props.project}, main`;
+    }
+
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
                      .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
                      .field('file', file)
-                     .field('tags', [`${this.props.project}`])
+                     .field('alt', `${this.props.project} project image`)
+                     .field('tags', [tag])
                      .field('public_id', `wbp/projects/${this.props.project}/` + file.name);
     upload.end((err, response) => {
       if (err) {
@@ -36,22 +43,37 @@ class AddImages extends React.Component {
 
       if (response.body.secure_url !== '') {
         this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
+          uploadedFileCloudinaryUrl: response.body.secure_url,
+          selectedMainImage: true
         });
       }
     });
   }
 
   render() {
+    var message = "CLICK HERE (or drag here) to add MAIN project image";
+    if (this.state.selectedMainImage === true) {
+      message = "Great! Now add project images";
+    }
+
+    var viewBox = "";
+    if(!this.props.project) {
+      viewBox = <div></div>
+    } else {
+      viewBox = (
+        <Dropzone
+          onDrop={this.onImageDrop.bind(this)}
+          multiple={false}
+          accept="image/*">
+          <div>{message}</div>
+        </Dropzone>
+      )
+    }
+
     return (
       <form>
         <div className="FileUpload">
-          <Dropzone
-            onDrop={this.onImageDrop.bind(this)}
-            multiple={false}
-            accept="image/*">
-            <div>{this.props.message}</div>
-          </Dropzone>
+          {viewBox}
         </div>
 
         <div>
