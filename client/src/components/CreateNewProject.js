@@ -20,27 +20,34 @@ class CreateNewProject extends React.Component {
   }
   render() {
     // Input the new project name. When button is pressed, AddImages will open.
-    var addProjectName = (
-    <div>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        this.projectNameAdded();
-      }}>
+    var addProjectName = "";
+    if(this.state.projectNamed === true) {
+      addProjectName = (
+        <div className="fade-bold">{this.state.projects.projName}</div>
+      )
+    } else {
+      addProjectName = (
         <div>
-          <input
-            placeholder="Name  *required*"
-            onChange={(e) => {
-              const project = {projName: e.target.value};
-              this.setState({
-                projects: Object.assign(this.state.projects,project)
-              })
-            }}
-          />
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            this.projectNameAdded();
+          }}>
+            <div>
+              <input
+                placeholder="Name  *required*"
+                onChange={(e) => {
+                  const project = {projName: e.target.value};
+                  this.setState({
+                    projects: Object.assign(this.state.projects,project)
+                  })
+                }}
+              />
+            </div>
+            <button>Name the project</button>
+          </form>
         </div>
-        <button>Name the project</button>
-      </form>
-    </div>
-    );
+      );
+    }
 
     var addImageBox = "";
 

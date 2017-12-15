@@ -61,21 +61,22 @@ class AddImages extends React.Component {
       viewBox = <div></div>
     } else {
       viewBox = (
-        <Dropzone
-          onDrop={this.onImageDrop.bind(this)}
-          multiple={false}
-          accept="image/*">
-          <div>{message}</div>
-        </Dropzone>
+        <div className='d-flex justify-content-center padtop2'>
+          <Dropzone
+            onDrop={this.onImageDrop.bind(this)}
+            multiple={false}
+            accept="image/*">
+            <div>{message}</div>
+          </Dropzone>
+        </div>
       )
     }
 
     return (
       <form>
-        <div className="FileUpload">
+        <div className="">
           {viewBox}
         </div>
-
         <div>
           {this.state.uploadedFileCloudinaryUrl === '' ? null :
           <div>
