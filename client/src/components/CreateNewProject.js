@@ -14,21 +14,22 @@ class CreateNewProject extends React.Component {
     };
   }
 
-  addProjMainImage = (projName) => {
+  projectNameAdded = () => {
     return (
       this.setState({ projectNamed: true})
     )
   }
   render() {
-    var viewAddProjectMain = (
+    // Input the new project name. When button is pressed, AddImages will open.
+    var addProjectName = (
     <div>
       <form onSubmit={(e) => {
         e.preventDefault();
-        this.addProjMainImage(this.state.projects.projName);
+        this.projectNameAdded();
       }}>
         <div>
           <input
-            placeholder="*required"
+            placeholder="Name  *required*"
             onChange={(e) => {
               const project = {projName: e.target.value};
               this.setState({
@@ -37,36 +38,46 @@ class CreateNewProject extends React.Component {
             }}
           />
         </div>
-        <button>Create new project</button>
+        <button>Name the project</button>
       </form>
     </div>
     );
+    console.log(this.state.mainImageSet);
 
-    var viewAddProjectImages = "";
+    var addImageBox = "";
+    var message = "";
+
+    if(!this.state.mainImageSet) {
+      message = 'drag & drop, or click here to select your MAIN project image'
+    } else {
+      message = 'Now select your project images and place here'
+    }
+
     if(!this.state.projectNamed) {
-        viewAddProjectImages = <div></div>
+        addImageBox = <div></div>
       } else {
-        if(!this.state.mainImageSet) {
-          viewAddProjectImages =
-            <AddImages
-              project={this.state.projects.projName}
-              message={'Add a main project image'}
-              />
-        }
-        
+        addImageBox =
+          <AddImages
+            project={this.state.projects.projName}
+            message={message}
+            />;
+          console.log('here');
+          if(this.state.mainImageSet === false) this.setState({ mainImageSet: true});
       }
+
+
 
 
     return (
       <div>
-        <div>
+        <div className='padtop3'>
           <button
             className="backButton"
             onClick={this.props.toggleShow}>back
           </button>
           <h1>Create New Project</h1>
-          {viewAddProjectMain}
-          {viewAddProjectImages}
+          {addProjectName}
+          {addImageBox}
         </div>
       </div>
     )
