@@ -7,21 +7,21 @@ class CreateNewProject extends React.Component {
     this.state = {
       projects: {
         projName: "",
-        projImages: []
+        projImages: [],
+        projectNamed: false,
+        mainImageSet: false,
       }
     };
   }
 
   addProjMainImage = (projName) => {
-    <button
-      onClick={() => <AddImages projectName={this.state.projects.projName}/>}
-      >Add Project Main Image
-    </button>
+    return (
+      this.setState({ projectNamed: true})
+    )
   }
-
   render() {
-
     var viewAddProjectMain = (
+    <div>
       <form onSubmit={(e) => {
         e.preventDefault();
         this.addProjMainImage(this.state.projects.projName);
@@ -39,13 +39,21 @@ class CreateNewProject extends React.Component {
         </div>
         <button>Create new project</button>
       </form>
+    </div>
     );
 
     var viewAddProjectImages = "";
-    if(this.state.projects.projName === '') {
+    if(!this.state.projectNamed) {
         viewAddProjectImages = <div></div>
       } else {
-        viewAddProjectImages = <div>Hi</div>
+        if(!this.state.mainImageSet) {
+          viewAddProjectImages =
+            <AddImages
+              project={this.state.projects.projName}
+              message={'Add a main project image'}
+              />
+        }
+        
       }
 
 

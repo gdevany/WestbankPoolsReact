@@ -10,8 +10,6 @@ class AddImages extends React.Component {
     super(props);
 
     this.state = {
-      projName: "riverside",
-      projImageName: "riverside2",
       uploadedFile: null,
       uploadedFileCloudinaryUrl: ''
     };
@@ -29,8 +27,8 @@ class AddImages extends React.Component {
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
                      .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
                      .field('file', file)
-                     .field('tags', ['testIt'])
-                     .field('public_id', `wbp/projects/${this.state.projName}/${this.state.projImageName}`);
+                     .field('tags', [`${this.props.project}`])
+                     .field('public_id', `wbp/projects/${this.props.project}`);
 
     upload.end((err, response) => {
       if (err) {
@@ -53,7 +51,7 @@ class AddImages extends React.Component {
             onDrop={this.onImageDrop.bind(this)}
             multiple={false}
             accept="image/*">
-            <div>Drop an image or click to select a file to upload.</div>
+            <div>{this.props.message}</div>
           </Dropzone>
         </div>
 
