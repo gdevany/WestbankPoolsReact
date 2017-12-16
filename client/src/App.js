@@ -10,7 +10,7 @@ import AboutUs from './containers/AboutUsContainer';
 import Contact from './containers/ContactContainer';
 import Footer from './components/Footer';
 // import AddImages from './components/AddImages';
-import CreateNewProject from './components/CreateNewProject';
+import CreateNewProject from './containers/CreateNewProjectContainer';
 // const clKey = 934548452896616;
 
 // compoonentWillMount() {
