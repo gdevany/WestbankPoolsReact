@@ -2,6 +2,7 @@ import React from 'react';
 
 
 function Footer() {
+
   return (
     <div>
       <div className="padsides padtop2">A pool is an investment. Let us help you make the most of it.</div>

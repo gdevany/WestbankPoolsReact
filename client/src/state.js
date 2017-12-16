@@ -1,5 +1,5 @@
 export default {
-  loggedIn: "",
+  loggedIn: false,
   projectChosen: "",
   pageSelected: "projects",
   pages: ["projects","process","faqs","about","contact"],
