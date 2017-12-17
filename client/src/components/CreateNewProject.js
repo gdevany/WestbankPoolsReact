@@ -45,10 +45,13 @@ class CreateNewProject extends React.Component {
     if(!this.state.secBoxClicked) {
       signIn = <div></div>
     } else {
+      console.log(this.props.pageSelected);
       signIn = (
         <form onSubmit={(e) => {e.preventDefault(); this.checkAuth()}}>
           <div>
-            <input onChange={(e) => this.setState({pword:e.target.value})}/>
+            <input
+              autoFocus
+              onChange={(e) => this.setState({pword:e.target.value})}/>
             <button type="submit">submit</button>
           </div>
         </form>
@@ -62,21 +65,22 @@ class CreateNewProject extends React.Component {
     var addProjectName = "";
     if(!this.state.projectNamed === true && this.state.loggedIn === true) {
       addProjectName = (
-        <div>
+        <div className="borderShadow padbottom2">
           <button
-            className="backButton padtop3"
+            className="backButton padtop2"
             onClick={ () => {
               this.props.setPage('projects');
               this.logOut();
             }}>back
           </button>
-          <h1 className="padtop3">Create New Project</h1>
-          <form onSubmit={(e) => {
+          <h1 className="padtop2">Create New Project</h1>
+          <form className="padbottom2" onSubmit={(e) => {
             e.preventDefault();
             this.projectNameAdded();
           }}>
-            <div className="padtop3">
+            <div className="padtop3 padbottom">
               <input
+                autoFocus
                 placeholder="Name  *required*"
                 onChange={(e) => {
                   const project = {projName: e.target.value};
@@ -103,32 +107,41 @@ class CreateNewProject extends React.Component {
     if(this.state.projectNamed === true && this.state.loggedIn === true) {
       addImageBox = (
       <div>
-        <button
-          className="backButton padtop3"
-          onClick={ () => {
-            this.props.setPage('projects');
-            this.logOut();
-          }}>click here when done
-        </button>
-        <AddImages project={this.state.projects.projName} />
+        <div>
+          <div className="col-sm-8 offset-sm-2 borderShadow padbottom2">
+            <button
+              className="backButton padtop3"
+              onClick={ () => {
+                this.props.setPage('projects');
+                this.logOut();
+              }}>click here when done
+            </button>
+            <AddImages project={this.state.projects.projName} />
+          </div>
+        </div>
       </div>)
       } else {
         addImageBox = <div></div>
       }
     return (
-      <div>
-        <div className='padtop3'>
-          <div
-            className="projboxx d-flex float-right"
-            onClick={ () => {
-              this.setState({secBoxClicked: true});
-              this.props.setPage('');
-            } }></div>
-          <div>{signIn}</div>
-          {addProjectName}
-          {addImageBox}
+      <div className="container">
+        <div className="projboxx d-flex float-right"
+          onClick={ () => {
+            this.setState({secBoxClicked: true});
+            this.props.setPage('');
+          } }
+          >
         </div>
-      </div>
+        <div className='row'>
+          <div className="col-sm-8 offset-sm-2">
+            <div className="">
+              {signIn}
+            </div>
+            {addProjectName}
+            {addImageBox}
+          </div>
+        </div>
+        </div>
     )
   }
 }

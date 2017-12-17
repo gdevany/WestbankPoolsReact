@@ -61,7 +61,7 @@ class AddImages extends React.Component {
       viewBox = <div></div>
     } else {
       viewBox = (
-        <div className='d-flex justify-content-center padtop2'>
+        <div className='d-flex justify-content-center padtop2 padbottom2'>
           <Dropzone
             onDrop={this.onImageDrop.bind(this)}
             multiple={false}
@@ -79,12 +79,13 @@ class AddImages extends React.Component {
         </div>
         <div>
           {this.state.uploadedFileCloudinaryUrl === '' ? null :
-          <div>
+          <div className="padbottom2">
+            <p>Confirmation Image: </p>
             <p>{this.state.uploadedFile.name}</p>
             <img
               src={this.state.uploadedFileCloudinaryUrl}
               alt="test"
-              className="projimg"
+              className="imgAddConfirm"
               />
           </div>}
         </div>

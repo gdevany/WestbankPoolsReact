@@ -105,6 +105,10 @@ a {
   /*padding-top: 5em;*/
 }
 
+.borderShadow {
+  border: 1px solid grey;
+}
+
 .projtitle {
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(242, 242, 242, 1);
@@ -146,8 +150,8 @@ a {
 .projboxx {
   width: 20px;
   height: 20px;
-  background-color: red;
-  border: solid black;
+  /*background-color: red;*/
+  /*border: solid black;*/
 }
 
 .projimg {
@@ -156,6 +160,11 @@ a {
   /*margin-bottom: 30px;*/
   padding: 5px;
   image-rendering: pixelated;
+}
+
+.imgAddConfirm {
+  width: 75%;
+  max-width: 200px;
 }
 
 .padtop {
