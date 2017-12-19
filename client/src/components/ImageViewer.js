@@ -3,32 +3,35 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
 
 // only show if project image is selected from ProjectInd
-function ImageViewer(props) {
-  console.log(props);
-  var viewIt = "";
-  var images = [];
+class ImageViewer extends React.Component {
 
-  // map out images for the projectSelected (props.imageList from ProjectInd)
-  props.imageList.map(i => {
-    return(
-      images = [...images, {original:require(`../pics/${i.url}`),
-        thumbnail:require(`../pics/${i.url}`)}]
-    )
-  })
+  render() {
+    var viewIt = "";
+    var images = [];
 
-  if(props.projectChosen !== "" && props.viewerList.length > 1) {
-    viewIt = (
-      <ImageGallery items={images} />
+    // map out images for the projectSelected (props.imageList from ProjectInd)
+    this.props.imageList.map(i => {
+      return(
+        images = [...images, {original:require(`../pics/${i.url}`),
+          thumbnail:require(`../pics/${i.url}`)}]
+      )
+    })
+
+    if(this.props.projectChosen !== "" && this.props.viewerList.length > 1) {
+      window.scroll(0,230);
+      viewIt = (
+        <ImageGallery items={images} />
+      )
+    } else {
+      viewIt = <div></div>
+    }
+
+    return (
+      <div>
+      {viewIt}
+    </div>
     )
-  } else {
-    viewIt = <div></div>
   }
-
-  return (
-    <div>
-    {viewIt}
-  </div>
-  )
 }
 
 export default ImageViewer;
