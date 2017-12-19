@@ -4,6 +4,7 @@ function Contact(props) {
   var viewIt = "";
 
   if(props.pageSelected === 'contact') {
+    window.scroll(0,0);
     viewIt = (
       <div>
         <div className="container padbottom2 projtitle">

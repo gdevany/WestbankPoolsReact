@@ -9,6 +9,7 @@ function ProjectInd(props) {
 
   if(props.projectChosen !== "" && props.pageSelected === "projects") {
     // Map thru project pics to show
+    window.scroll(0,0);
     viewIt = props.images.map((image,i) => {
       if(image.project === props.projectChosen) {
         imageList = [...imageList, image];

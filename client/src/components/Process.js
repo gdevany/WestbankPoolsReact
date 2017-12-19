@@ -4,6 +4,7 @@ function Process(props) {
   var viewIt = "";
 
   if(props.pageSelected === 'process') {
+    window.scroll(0,0);
     viewIt = (
 
       <div>

@@ -4,6 +4,7 @@ function Faqs(props) {
   var viewIt = "";
 
   if(props.pageSelected === 'faqs') {
+    window.scroll(0,0);
     viewIt = (
 
       <div>
