@@ -22,17 +22,17 @@ class LoadProjects extends React.Component {
  render() {
    return(
      <div>
-     <CloudinaryContext cloudName="gdevany"> {
-       this.state.gallery.map(proj => {
-         return(
-           <div key={proj.public_id}>
-             <Image publicId={proj.public_id}></Image>
-           </div>
-         )
-       })
-       }
-     </CloudinaryContext>
-   </div>
+       <CloudinaryContext cloudName="gdevany"> {
+         this.state.gallery.map(proj => {
+           return(
+             <div key={proj.public_id}>
+               <Image publicId={proj.public_id}></Image>
+             </div>
+           )
+         })
+         }
+       </CloudinaryContext>
+     </div>
    )
  }
 

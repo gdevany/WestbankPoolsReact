@@ -24,6 +24,13 @@ class AddImages extends React.Component {
     this.handleImageUpload(files[0]);
   }
 
+  removeExtension(fullName) {
+    var idx = fullName.indexOf(".");
+    var withoutExt = fullName.slice(0,idx);
+    console.log(withoutExt);
+    return withoutExt;
+  }
+
   handleImageUpload(file) {
     var tag = `${this.props.project}`;
     if (this.state.selectedMainImage === false) {
@@ -35,7 +42,7 @@ class AddImages extends React.Component {
                      .field('file', file)
                      .field('alt', `${this.props.project} project image`)
                      .field('tags', [tag])
-                     .field('public_id', `wbp/projects/${this.props.project}/` + file.name);
+                     .field('public_id', `wbp/projects/${this.props.project}/` + this.removeExtension(file.name));
     upload.end((err, response) => {
       if (err) {
         console.error(err);
