@@ -42,6 +42,7 @@ class AddImages extends React.Component {
       }
 
       if (response.body.secure_url !== '') {
+        console.log(this.state.uploadedFileCloudinaryUrl);
         this.setState({
           uploadedFileCloudinaryUrl: response.body.secure_url,
           selectedMainImage: true

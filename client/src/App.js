@@ -9,8 +9,8 @@ import Faqs from './containers/FaqsContainer';
 import AboutUs from './containers/AboutUsContainer';
 import Contact from './containers/ContactContainer';
 import Footer from './components/Footer';
-// import AddImages from './components/AddImages';
 import CreateNewProject from './containers/CreateNewProjectContainer';
+import LoadProjects from './components/LoadProjects';
 // const clKey = 934548452896616;
 
 // compoonentWillMount() {
@@ -23,6 +23,7 @@ function App() {
       <AppSign />
       <Logo />
       <Headings />
+      <LoadProjects />
       <Projects />
       <Process />
       <Faqs />
