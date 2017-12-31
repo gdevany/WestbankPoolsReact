@@ -22,14 +22,16 @@ class CreateNewProject extends React.Component {
     )
   }
 
-  checkAuth = (e) => {
-    if(this.state.pword.length > 10) {
-      this.setState({loggedIn: true, secBoxClicked: false});
+  checkAuth = () => {
+    if(this.state.pword === '' ||
+      this.state.pword === undefined || 
+      this.state.pword.length < 10) {
+        alert('You shouldnt be here');
+        this.setState({secBoxClicked: false});
+        this.logOut();
+        this.props.setPage('projects');
     } else {
-      alert('You shouldnt be here');
-      this.setState({secBoxClicked: false});
-      this.logOut();
-      this.props.setPage('projects');
+      this.setState({loggedIn: true, secBoxClicked: false});
     }
   }
 
