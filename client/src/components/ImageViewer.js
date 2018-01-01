@@ -1,23 +1,47 @@
 import React from 'react';
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
+import {Image} from 'cloudinary-react';
+
 
 // only show if project image is selected from ProjectInd
 class ImageViewer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      gallery: []
+    }
+  }
+
+  componentWillMount() {
+    // this.setState({gallery: this.props.imageList})
+    this.props.imageList.map(image => {
+      return(
+        this.setState({gallery: [...this.state.gallery, image]})
+      )
+    })
+  }
 
   render() {
+    console.log(this.state.gallery);
     var viewIt = "";
     var images = [];
 
     // map out images for the projectSelected (props.imageList from ProjectInd)
-    this.props.imageList.map(i => {
+    this.state.gallery.map(i => {
       return(
-        images = [...images, {original:require(`../pics/${i.url}`),
-          thumbnail:require(`../pics/${i.url}`)}]
+        // images = [...images, {original:require(`../pics/${i.url}`),
+        //   thumbnail:require(`../pics/${i.url}`)}]
+          images = [...images, {
+            original:
+            <Image cloudName="gdevany" publicId={i.public_id}></Image>,
+            thumbnail:
+            <Image cloudName="gdevany" publicId={i.public_id}></Image>
+          }]
       )
     })
 
-    if(this.props.projectChosen !== "" && this.props.viewerList.length > 1) {
+    if(this.props.projectChosen !== "" && this.state.gallery.length > 1) {
       window.scroll(0,230);
       viewIt = (
         <ImageGallery items={images} />

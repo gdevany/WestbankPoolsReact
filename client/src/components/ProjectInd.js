@@ -10,6 +10,7 @@ class ProjectInd extends React.Component {
     super(props);
     this.state = {
       gallery: [],
+      imageViewerClicked: false
     }
   }
 
@@ -23,16 +24,15 @@ class ProjectInd extends React.Component {
 
   render() {
     var viewIt = "";
-    var imageList = "";
 
     if(this.props.projectChosen !== "" && this.props.pageSelected === "projects") {
       // Map thru project pics to show
       window.scroll(0,0);
 
       viewIt = this.state.gallery.map(image => {
-        imageList = [...imageList, image];
         return(
           <Image
+            onClick={() => {this.setState({imageViewerClicked: true})}}
             cloudName="gdevany"
             publicId={image.public_id}
             className="projIndimg"
@@ -43,27 +43,14 @@ class ProjectInd extends React.Component {
       })
     } else return <div></div>
 
-    //   viewIt = props.images.map((image,i) => {
-    //     if(image.project === props.projectChosen) {
-    //       imageList = [...imageList, image];
-    //       return (<img
-    //         onClick={() => {props.setViewerList(imageList)}}
-    //         src={require(`../pics/${image.url}`)}
-    //         className="projIndimg"
-    //         alt="project pics"
-    //         style={{cursor:'pointer'}}
-    //         key={i} />)
-    //     } else return ""
-    //   })
-    //
-    // } else {
-    //   return <div></div>
-    // }
-
     return(
       <div className="container">
         <div className="row black padtop">
-          <div className="projIndimg"><ImageViewer imageList={this.props.viewerList} /></div>
+          <div className="projIndimg">{
+              this.state.imageViewerClicked === false ?
+              null : <ImageViewer imageList={this.state.gallery} />
+            }
+            </div>
 
           <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
             <div className="bigger projtitle">{this.props.projectChosen}</div>
