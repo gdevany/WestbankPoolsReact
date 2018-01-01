@@ -13,18 +13,15 @@ class ProjectInd extends React.Component {
     }
   }
 
-  componentDidMount() {
-    if(this.props.projectChosen !== "" && this.props.pageSelected === 'projects') {
+  componentWillMount() {
       axios.get(`https://res.cloudinary.com/gdevany/image/list/${this.props.projectChosen}.json`)
         .then(res => {
           console.log(res.data.resources);
           this.setState({gallery: res.data.resources});
         })
-    }
   }
 
   render() {
-    console.log(`projInd images:${this.state.gallery}`);
     var viewIt = "";
     var imageList = "";
 
@@ -36,7 +33,9 @@ class ProjectInd extends React.Component {
         imageList = [...imageList, image];
         return(
           <Image
-            className="projIndImg"
+            cloudName="gdevany"
+            publicId={image.public_id}
+            className="projIndimg"
             style={{cursor:'pointer'}}
             key={image.public_id}>
           </Image>

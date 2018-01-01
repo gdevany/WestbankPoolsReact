@@ -64,8 +64,7 @@ class LoadProjects extends React.Component {
    }
 
    return(
-     <div>
-       <ProjectInd />
+     <div>{this.props.projectChosen === "" ? null : <ProjectInd />}
       <div className="container">
         <div className="row">
           <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
