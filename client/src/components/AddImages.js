@@ -24,6 +24,7 @@ class AddImages extends React.Component {
     this.handleImageUpload(files[0]);
   }
 
+//removes the images file extension because cloudinary adds it
   removeExtension(fullName) {
     var idx = fullName.indexOf(".");
     var withoutExt = fullName.slice(0,idx);

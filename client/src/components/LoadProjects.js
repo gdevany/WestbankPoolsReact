@@ -1,53 +1,71 @@
 import React from 'react';
 import axios from 'axios';
-import {CloudinaryContext, Image} from 'cloudinary-react';
+import {Image} from 'cloudinary-react';
+import ProjectInd from '../containers/ProjectIndContainer';
 
 
 class LoadProjects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gallery: []
+      gallery: [],
+      projectFile: "wbp/projects/",
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get('https://res.cloudinary.com/gdevany/image/list/main.json')
       .then(res => {
-        console.log(res.data.resources);
         this.setState({gallery: res.data.resources});
       })
   }
 
- render() {
+// Take the full file name of project selected, and extract the project name.
+// Set the project selected in this.state
+  getProjectName = (fileName) => {
+    var projPlusFileName = fileName.slice(this.state.projectFile.length);
+    var idx = projPlusFileName.indexOf("/");
+    var projName = projPlusFileName.slice(0, idx);
+    return projName;
+  }
 
+ render() {
+   // console.log(`projectSelected: ${this.props.projectChosen}`);
    var viewIt = "";
    var projs = "";
 
+   // Only show if 'projects' page is selected (default)
    if(this.props.pageSelected === 'projects') {
+     window.scroll(0,0);
 
-      projs =  <CloudinaryContext cloudName="gdevany"> {
-         this.state.gallery.map(proj => {
-           viewIt = (
-             <div className="col-xs-12 offset-sm-0 col-sm-6 offset-md-0 col-md-4 padbottom2"
-               key={proj.public_id}>
-               <div className="d-flex flex-column">
-                 <div className="projbox">
-                     <Image publicId={proj.public_id} className="projimg"></Image>
-                 </div>
-               </div>
-             </div>
-           )
-           return viewIt;
-         })
-       }</CloudinaryContext>
-
+     projs = this.state.gallery.map(proj => {
+      viewIt = (
+       <div
+        className="col-xs-12 offset-sm-0 col-sm-6 offset-md-0 col-md-4 padbottom2"
+        key={proj.public_id}>
+         <div className="d-flex flex-column">
+           <div className="projbox">
+               <Image
+                 onClick={() => {
+                   this.props.setProjectChosen(this.getProjectName(proj.public_id));
+                 }}
+                 cloudName="gdevany"
+                 publicId={proj.public_id}
+                 className="projimg">
+               </Image>
+           </div>
+         </div>
+       </div>
+      )
+     return viewIt;
+    })
    } else {
-     viewIt = <div></div>
+     return <div></div>
    }
 
    return(
      <div>
+       <ProjectInd />
       <div className="container">
         <div className="row">
           <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">

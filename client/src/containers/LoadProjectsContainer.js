@@ -9,13 +9,13 @@ function mapStateToProps(state) {
     images: state.images,
     loggedIn: state.loggedIn,
     pageSelected: state.pageSelected,
-
+    projectChosen: state.projectChosen,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    setProjChosen: (proj) => {
+    setProjectChosen: (proj) => {
       dispatch(setProjectChosen(proj))
     },
     setViewerList: (l) => {
