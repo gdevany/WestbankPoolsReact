@@ -4,7 +4,8 @@ import {setViewerList} from '../actions';
 
 function mapStateToProps(state) {
   return {
-    viewerList: state.viewerList
+    viewerList: state.viewerList,
+    projectChosen: state.projectChosen
   }
 }
 

@@ -14,12 +14,7 @@ class ImageViewer extends React.Component {
   }
 
   componentWillMount() {
-    // this.setState({gallery: this.props.imageList})
-    this.props.imageList.map(image => {
-      return(
-        this.setState({gallery: [...this.state.gallery, image]})
-      )
-    })
+    this.setState({gallery: this.props.imageList});
   }
 
   render() {
@@ -40,11 +35,16 @@ class ImageViewer extends React.Component {
           }]
       )
     })
-
-    if(this.props.projectChosen !== "" && this.state.gallery.length > 1) {
+    if(this.props.projectChosen !== "" && this.state.gallery.length >= 1) {
+      console.log({images});
       window.scroll(0,230);
       viewIt = (
-        <ImageGallery items={images} />
+        // <ImageGallery items={images} />
+        <ImageGallery items={[{original:
+        <Image cloudName="gdevany" publicId={this.state.gallery[0].public_id}></Image>,
+        thumbnail:
+        <Image cloudName="gdevany" publicId={this.state.gallery[0].public_id}></Image>}]} />
+
       )
     } else {
       viewIt = <div></div>
