@@ -2,6 +2,7 @@ import React from 'react';
 import ImageViewer from '../containers/ImageViewerContainer';
 import axios from 'axios';
 import {Image} from 'cloudinary-react';
+import ShowFullSizeImage from './ShowFullSizeImage';
 
 
 // Only show if project has been selected (from Projects.js) and page = projects.
@@ -10,16 +11,27 @@ class ProjectInd extends React.Component {
     super(props);
     this.state = {
       gallery: [],
-      imageViewerClicked: false
+      imageViewerClicked: false,
+      imageClicked: "",
     }
   }
 
+// Preload the list of 'main' project tags from cloudinary
   componentWillMount() {
       axios.get(`https://res.cloudinary.com/gdevany/image/list/${this.props.projectChosen}.json`)
         .then(res => {
           console.log(res.data.resources);
           this.setState({gallery: res.data.resources});
         })
+  }
+
+  showFullSizeImage = () => {
+    return(
+      // this.state.imageViewerClicked === false ?
+      // null : <ImageViewer imageList={this.state.gallery} />
+      this.state.imageViewerClicked === false ?
+      null : <ShowFullSizeImage image={this.state.imageClicked} />
+    )
   }
 
   render() {
@@ -32,7 +44,9 @@ class ProjectInd extends React.Component {
       viewIt = this.state.gallery.map(image => {
         return(
           <Image
-            onClick={() => {this.setState({imageViewerClicked: true})}}
+            onClick={() => {
+              this.setState({imageViewerClicked: true, imageClicked:image.public_id});
+            }}
             cloudName="gdevany"
             publicId={image.public_id}
             className="projIndimg"
@@ -47,8 +61,7 @@ class ProjectInd extends React.Component {
       <div className="container">
         <div className="row black padtop">
           <div className="projIndimg">{
-              this.state.imageViewerClicked === false ?
-              null : <ImageViewer imageList={this.state.gallery} />
+              this.showFullSizeImage()
             }
             </div>
 
@@ -57,7 +70,7 @@ class ProjectInd extends React.Component {
             <div className="padtop2 padbottom">{this.props.projectInfo.desc}</div>
           </div>
           <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex flex-column justify-content-center">
-            <div>Click image to start ImageViewer</div>
+            <div>Click image to view full size</div>
             <div>{viewIt}</div>
           </div>
         </div>
