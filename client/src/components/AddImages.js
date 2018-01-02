@@ -42,7 +42,8 @@ class AddImages extends React.Component {
                      .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
                      .field('file', file)
                      .field('tags', [tag])
-                     .field('context', {caption:'hello'})
+                     // .field('context', "caption=hello")
+                     .field('context', `caption=${this.props.caption}`)
                      .field('public_id', `wbp/projects/${this.props.project}/` + this.removeExtension(file.name));
     upload.end((err, response) => {
       if (err) {
