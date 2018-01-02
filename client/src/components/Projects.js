@@ -1,6 +1,8 @@
 import React from 'react';
 import ProjectInd from '../containers/ProjectIndContainer';
 
+// NOTE: THIS MODULE HAS BEEN REPLACED WITH LoadProjects.js
+
 // Only show if 'projects' page is selected (default)
 function Projects(props) {
 

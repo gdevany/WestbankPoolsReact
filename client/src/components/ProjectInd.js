@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageViewer from '../containers/ImageViewerContainer';
+// import ImageViewer from '../containers/ImageViewerContainer';
 import axios from 'axios';
 import {Image} from 'cloudinary-react';
 import ShowFullSizeImage from './ShowFullSizeImage';
@@ -25,6 +25,7 @@ class ProjectInd extends React.Component {
         })
   }
 
+// If image is clicked, show full size rendering
   showFullSizeImage = () => {
     return(
       // this.state.imageViewerClicked === false ?
@@ -38,7 +39,7 @@ class ProjectInd extends React.Component {
     var viewIt = "";
 
     if(this.props.projectChosen !== "" && this.props.pageSelected === "projects") {
-      // Map thru project pics to show
+// Map thru project pics (this.state.gallery) to show
       window.scroll(0,0);
 
       viewIt = this.state.gallery.map(image => {

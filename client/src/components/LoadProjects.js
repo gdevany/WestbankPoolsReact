@@ -22,6 +22,7 @@ class LoadProjects extends React.Component {
 
 // Take the full file name of project selected, and extract the project name.
 // Set the project selected in this.state
+// This removes the extension
   getProjectName = (fileName) => {
     var projPlusFileName = fileName.slice(this.state.projectFile.length);
     var idx = projPlusFileName.indexOf("/");

@@ -7,6 +7,7 @@ class CreateNewProject extends React.Component {
     this.state = {
       projects: {
         projName: "",
+        caption: "",
         projImages: [],
         projectNamed: false,
         secBoxClicked: false,
@@ -24,7 +25,7 @@ class CreateNewProject extends React.Component {
 
   checkAuth = () => {
     if(this.state.pword === '' ||
-      this.state.pword === undefined || 
+      this.state.pword === undefined ||
       this.state.pword.length < 10) {
         alert('You shouldnt be here');
         this.setState({secBoxClicked: false});
@@ -47,7 +48,6 @@ class CreateNewProject extends React.Component {
     if(!this.state.secBoxClicked) {
       signIn = <div></div>
     } else {
-      console.log(this.props.pageSelected);
       signIn = (
         <form onSubmit={(e) => {e.preventDefault(); this.checkAuth()}}>
           <div>
@@ -80,7 +80,7 @@ class CreateNewProject extends React.Component {
             e.preventDefault();
             this.projectNameAdded();
           }}>
-            <div className="padtop3 padbottom">
+            <div className="padtop3">
               <input
                 autoFocus
                 placeholder="Name  *required*"
@@ -91,6 +91,18 @@ class CreateNewProject extends React.Component {
                   })
                 }}
               />
+            </div>
+            <div className="padtop2 padbottom">
+              <textarea
+                placeholder="Description  *required*"
+                onChange={(e) => {
+                  const projCaption = {caption: e.target.value};
+                  this.setState({
+                    projects: Object.assign(this.state.projects,projCaption)
+                  })
+                }}
+                >
+              </textarea>
             </div>
             <button>Name the project</button>
           </form>
@@ -118,7 +130,7 @@ class CreateNewProject extends React.Component {
                 this.logOut();
               }}>click here when done
             </button>
-            <AddImages project={this.state.projects.projName} />
+            <AddImages project={this.state.projects.projName} caption={this.state.projects.caption}/>
           </div>
         </div>
       </div>)

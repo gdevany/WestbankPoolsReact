@@ -3,7 +3,8 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
 import {Image} from 'cloudinary-react';
 
-// NOTE: THIS IMAGEVIEWER WILL NOT READ <Image> FILES FROM CLOUDINARY 
+// NOTE: THIS IMAGEVIEWER WILL NOT READ <Image> FILES FROM CLOUDINARY
+// NOTE: https://glitch.com/edit/#!/cloudinary-react-sdk?path=src/app.js:1:0
 
 // only show if project image is selected from ProjectInd
 class ImageViewer extends React.Component {
