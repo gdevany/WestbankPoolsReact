@@ -16,20 +16,19 @@ class AddImages extends React.Component {
     };
   }
 
-  onImageDrop(files) {
-    this.setState({
-      uploadedFile: files[0]
-    });
-
-    this.handleImageUpload(files[0]);
-  }
-
 //removes the images file extension because cloudinary adds it
   removeExtension(fullName) {
     var idx = fullName.indexOf(".");
     var withoutExt = fullName.slice(0,idx);
     console.log(withoutExt);
     return withoutExt;
+  }
+
+  onImageDrop(files) {
+    this.setState({
+      uploadedFile: files[0]
+    });
+    this.handleImageUpload(files[0]);
   }
 
   handleImageUpload(file) {
@@ -42,7 +41,6 @@ class AddImages extends React.Component {
                      .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
                      .field('file', file)
                      .field('tags', [tag])
-                     // .field('context', "caption=hello")
                      .field('context', `caption=${this.props.caption}`)
                      .field('public_id', `wbp/projects/${this.props.project}/` + this.removeExtension(file.name));
     upload.end((err, response) => {
@@ -66,6 +64,7 @@ class AddImages extends React.Component {
       message = "Great! Now add project images";
     }
 
+// SHOW IF: project has been named (this.props.project)
     var viewBox = "";
     if(!this.props.project) {
       viewBox = <div></div>

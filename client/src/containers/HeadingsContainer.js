@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Headings from '../components/Headings';
-import {setPageSelect, setProjectChosen, setViewerList} from '../actions';
+import {setPageSelect, setProjectChosen} from '../actions';
 
 
 function mapStateToProps(state) {
@@ -17,9 +17,6 @@ function mapDispatchToProps(dispatch) {
     },
     setProjChosen: (proj) => {
       dispatch(setProjectChosen(proj))
-    },
-    setViewerList: (l) => {
-      dispatch(setViewerList(l))
     }
   }
 }

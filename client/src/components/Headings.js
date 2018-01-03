@@ -1,12 +1,11 @@
 import React from 'react';
 
-// Always show. Will act as Router for pages.
+// SHOW ALWAYS: Will act as Router for pages.
 function Headings(props) {
 
+// Map pages and show. If onClick, show that page and Bold Heading page name.
   var viewIt = "";
   var boldIt = "";
-
-  // Map pages and show. If onClick, show that page and Bold Heading page name.
   viewIt = props.pages.map((p,i) =>{
     boldIt = (props.pageSelected === p) ? "nav-link fade-bold" : "nav-link"
     return (
@@ -21,7 +20,6 @@ function Headings(props) {
           onClick={(e) => {
             e.preventDefault();
             props.setProjChosen("");
-            props.setViewerList([]);
             props.setPage(p)}}
           >{p}
         </div>

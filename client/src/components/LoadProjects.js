@@ -9,20 +9,24 @@ class LoadProjects extends React.Component {
     super(props);
     this.state = {
       gallery: [],
-      projectFile: "wbp/projects/",
+      projectFile: this.props.cloudinaryPojectFile,
+      projectMainImageTag: this.props.projectMainImageTag,
     }
   }
 
+// Preload projects tagged as (this.props.projectMainImageTag) from cloudinary
   componentWillMount() {
-    axios.get('https://res.cloudinary.com/gdevany/image/list/main.json')
+    axios.get(
+      `https://res.cloudinary.com/gdevany/image/list/${this.state.projectMainImageTag}.json`
+    )
       .then(res => {
         this.setState({gallery: res.data.resources});
       })
   }
 
+// REMOVE FILE EXTENSION
 // Take the full file name of project selected, and extract the project name.
-// Set the project selected in this.state
-// This removes the extension
+// This will be used to set the project selected (props.ProjectChosen)
   getProjectName = (fileName) => {
     var projPlusFileName = fileName.slice(this.state.projectFile.length);
     var idx = projPlusFileName.indexOf("/");
@@ -30,16 +34,14 @@ class LoadProjects extends React.Component {
     return projName;
   }
 
- render() {
-   // console.log(`projectSelected: ${this.props.projectChosen}`);
-   var viewIt = "";
-   var projs = "";
+  render() {
 
-   // Only show if 'projects' page is selected (default)
-   if(this.props.pageSelected === 'projects') {
-     window.scroll(0,0);
-
-     projs = this.state.gallery.map(proj => {
+// SHOW IF: 'projects' page is selected (default)
+    var viewIt = "";
+    var projs = "";
+    if(this.props.pageSelected === 'projects') {
+      window.scroll(0,0);
+      projs = this.state.gallery.map(proj => {
       viewIt = (
        <div
         className="col-xs-12 offset-sm-0 col-sm-6 offset-md-0 col-md-4 padbottom2"
@@ -58,13 +60,13 @@ class LoadProjects extends React.Component {
          </div>
        </div>
       )
-     return viewIt;
-    })
-   } else {
-     return <div></div>
-   }
+      return viewIt;
+      })
+    } else {
+      return <div></div>
+    }
 
-   return(
+    return(
      <div>{this.props.projectChosen === "" ? null : <ProjectInd />}
       <div className="container">
         <div className="row">
@@ -77,64 +79,8 @@ class LoadProjects extends React.Component {
         </div>
       </div>
      </div>
-   )
- }
-
+    )
+  }
 }
 
 export default LoadProjects;
-
-// render() {
-//    return(
-//      <div>
-//        <CloudinaryContext cloudName="gdevany"> {
-//          this.state.gallery.map(proj => {
-//            return(
-//              <div key={proj.public_id}>
-//                <Image publicId={proj.public_id}></Image>
-//              </div>
-//            )
-//          })
-//          }
-//        </CloudinaryContext>
-//      </div>
-//    )
-//  }
-
-
-// <CloudinaryContext cloudName="gdevany"> {
-//   this.state.gallery.map(proj => {
-//     return(
-//       <div className="col-xs-12 offset-sm-0 col-sm-6 offset-md-0 col-md-4 padbottom2">
-//         <div className="d-flex flex-column">
-//           <div className="projbox">
-//             <div key={proj.public_id}>
-//               <Image publicId={proj.public_id}></Image>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     )
-//   })
-//   }
-// </CloudinaryContext>
-
-// <div className="col-xs-12 offset-sm-0 col-sm-6 offset-md-0 col-md-4 padbottom2" key={i}>
-//   <div className="d-flex flex-column">
-//     <div className="projbox">
-//       <img
-//         onClick={ (e) => {
-//           e.preventDefault();
-//           props.setProjChosen(p.projName)
-//           props.setViewerList([])
-//         }}
-//         src={require(`../pics/${p.url}`)}
-//         className="projimg"
-//         alt="project pics"
-//         style={{cursor:'pointer'}}
-//         key={i}
-//         />
-//       <div className="d-flex justify-content-center padtop">{p.projName}</div>
-//     </div>
-//   </div>
-// </div>

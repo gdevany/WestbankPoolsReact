@@ -5,7 +5,6 @@ import AboutUs from '../components/AboutUs';
 function mapStateToProps(state) {
   return {
     pageSelected: state.pageSelected,
-
   }
 }
 

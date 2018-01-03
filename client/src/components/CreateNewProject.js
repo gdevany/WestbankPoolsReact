@@ -8,10 +8,9 @@ class CreateNewProject extends React.Component {
       projects: {
         projName: "",
         caption: "",
-        projImages: [],
         projectNamed: false,
         secBoxClicked: false,
-        pword: '',
+        pword: "",
         loggedIn: false,
       }
     };
@@ -41,9 +40,8 @@ class CreateNewProject extends React.Component {
   }
 
   render() {
-    // SIGN IN
-    // ONLY SHOW WHEN secBoxClicked === true
-    // Onced secret box clicked, check signIn Auth
+// SHOW IF: secBoxClicked === true
+// Onced secret box clicked, check signIn Auth
     var signIn = "";
     if(!this.state.secBoxClicked) {
       signIn = <div></div>
@@ -60,10 +58,11 @@ class CreateNewProject extends React.Component {
       )
     }
 
-    // NAME NEW PROJECT
-    // ONLY SHOW IF loggedIn === true
-    // Input the new project name. When button is pressed, AddImages will open.
-    // When project name entered, it will show in red, without input box.
+// SHOW IF: loggedIn === true
+// NAME NEW PROJECT
+// Input the new project name and caption(description).
+// When button is pressed, AddImages will open.
+// When project name entered, it will show in red, without input box.
     var addProjectName = "";
     if(!this.state.projectNamed === true && this.state.loggedIn === true) {
       addProjectName = (
@@ -114,9 +113,9 @@ class CreateNewProject extends React.Component {
       )
     } else addProjectName = <div></div>
 
-    // ADD IMAGES component call
-    // ONLY SHOW WHEN this.state.projectNamed === true && loggedIn === true.
-    // Show addImageBox IF new project named
+// SHOW IF: this.state.projectNamed === true && loggedIn === true.
+// ADD IMAGES component call
+// Show addImageBox IF new project named
     var addImageBox = "";
     if(this.state.projectNamed === true && this.state.loggedIn === true) {
       addImageBox = (
@@ -128,15 +127,19 @@ class CreateNewProject extends React.Component {
               onClick={ () => {
                 this.props.setPage('projects');
                 this.logOut();
-              }}>click here when done
+              } }>click here when done
             </button>
-            <AddImages project={this.state.projects.projName} caption={this.state.projects.caption}/>
+            <AddImages
+              project={this.state.projects.projName}
+              caption={this.state.projects.caption}
+            />
           </div>
         </div>
       </div>)
       } else {
         addImageBox = <div></div>
       }
+      
     return (
       <div className="container">
         <div className="projboxx d-flex float-right"
