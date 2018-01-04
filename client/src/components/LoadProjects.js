@@ -14,7 +14,7 @@ class LoadProjects extends React.Component {
     }
   }
 
-// Preload projects tagged as (this.props.projectMainImageTag) from cloudinary
+// PRELOAD PROJECTS tagged as (this.props.projectMainImageTag) from cloudinary
   componentWillMount() {
     axios.get(
       `https://res.cloudinary.com/gdevany/image/list/${this.state.projectMainImageTag}.json`

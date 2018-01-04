@@ -1,6 +1,7 @@
 import React from "react";
 import AddImages from './AddImages';
 
+
 class CreateNewProject extends React.Component {
   constructor() {
     super();
@@ -16,12 +17,14 @@ class CreateNewProject extends React.Component {
     };
   }
 
+// Set this.state.projectNamed === true if form submitted
   projectNameAdded = () => {
     return (
       this.setState({ projectNamed: true})
     )
   }
 
+// Authorization check
   checkAuth = () => {
     if(this.state.pword === '' ||
       this.state.pword === undefined ||
@@ -35,6 +38,7 @@ class CreateNewProject extends React.Component {
     }
   }
 
+// Log out
   logOut = () => {
     this.setState({loggedIn: false})
   }
@@ -58,7 +62,7 @@ class CreateNewProject extends React.Component {
       )
     }
 
-// SHOW IF: loggedIn === true
+// SHOW IF: this.state.projectNamed === false && loggedIn === true
 // NAME NEW PROJECT
 // Input the new project name and caption(description).
 // When button is pressed, AddImages will open.
@@ -66,7 +70,7 @@ class CreateNewProject extends React.Component {
     var addProjectName = "";
     if(!this.state.projectNamed === true && this.state.loggedIn === true) {
       addProjectName = (
-        <div className="borderShadow padbottom2">
+        <div className="borderShadow padInsides">
           <button
             className="backButton padtop2"
             onClick={ () => {
@@ -93,7 +97,10 @@ class CreateNewProject extends React.Component {
             </div>
             <div className="padtop2 padbottom">
               <textarea
-                placeholder="Description  *required*"
+                placeholder="Description  *required*  maxLength=1000 chars"
+                maxLength="1000"
+                rows="4"
+                cols="50"
                 onChange={(e) => {
                   const projCaption = {caption: e.target.value};
                   this.setState({
@@ -102,6 +109,9 @@ class CreateNewProject extends React.Component {
                 }}
                 >
               </textarea>
+              <div className="">
+                {this.state.projects.caption.length}/1000
+              </div>
             </div>
             <button>Name the project</button>
           </form>
@@ -139,26 +149,23 @@ class CreateNewProject extends React.Component {
       } else {
         addImageBox = <div></div>
       }
-      
+
     return (
       <div className="container">
         <div className="projboxx d-flex float-right"
           onClick={ () => {
             this.setState({secBoxClicked: true});
             this.props.setPage('');
-          } }
-          >
+          } }>
         </div>
         <div className='row'>
           <div className="col-sm-8 offset-sm-2">
-            <div className="">
-              {signIn}
-            </div>
+            <div className="">{signIn}</div>
             {addProjectName}
             {addImageBox}
           </div>
         </div>
-        </div>
+      </div>
     )
   }
 }

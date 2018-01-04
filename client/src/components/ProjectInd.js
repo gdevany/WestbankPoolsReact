@@ -25,7 +25,8 @@ class ProjectInd extends React.Component {
         })
   }
 
-// SHOW IF: image is clicked, show full size rendering (<ShowFullSizeImage />)
+// SHOW IF: this.state.imageClicked === true
+// show full size rendering (<ShowFullSizeImage />)
   showFullSizeImage = () => {
     return(
       // this.state.imageViewerClicked === false ?
@@ -47,7 +48,7 @@ class ProjectInd extends React.Component {
 // Map thru project pics (this.state.gallery) to show
     var viewIt = "";
     if(this.props.projectChosen !== "" && this.props.pageSelected === "projects") {
-      window.scroll(0,0);
+      window.scroll(0,230);
       viewIt = this.state.gallery.map(image => {
         return(
           <Image

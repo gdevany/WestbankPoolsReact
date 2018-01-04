@@ -188,6 +188,10 @@ a {
   margin-bottom: 30px;
 }
 
+.padInsides {
+  padding: 20px;
+}
+
 .padsides {
   margin-right: 10px;
   margin-left: 10px;

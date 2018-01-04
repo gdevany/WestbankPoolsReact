@@ -28,7 +28,7 @@ function Headings(props) {
   })
   return (
     <nav className="navbar navbar-toggleable-sm d-flex justify-content-center">
-        <div className="d-flex justify-content-center navborder">
+        <div className="d-flex justify-content-center">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarnavdropdown" aria-controls="navbarnavdropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon black currentfont">menu</span>
           </button>

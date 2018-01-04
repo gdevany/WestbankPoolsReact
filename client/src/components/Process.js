@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Process(props) {
-  var viewIt = "";
 
+function Process(props) {
+// SHOW IF: props.pageSelected = 'process'
+  var viewIt = "";
   if(props.pageSelected === 'process') {
     window.scroll(0,0);
     viewIt = (
-
       <div>
         <div className="container padbottom2 projtitle">
           <div className="row">
@@ -71,7 +71,6 @@ function Process(props) {
           </div>
         </div>
       </div>
-
     )
   } else return <div></div>
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function Footer() {
-
+// SHOW ALWAYS
   return (
     <div className="padbottom2">
       <div className="padsides padtop2">A pool is an investment. Let us help you make the most of it.</div>

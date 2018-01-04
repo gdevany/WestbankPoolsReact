@@ -1,8 +1,9 @@
 import React from 'react';
 
+
+// SHOW IF: props.pageSelected = 'contact'
 function Contact(props) {
   var viewIt = "";
-
   if(props.pageSelected === 'contact') {
     window.scroll(0,0);
     viewIt = (

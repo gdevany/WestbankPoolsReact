@@ -6,15 +6,11 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import passport from "passport";
 import authenticationRoutes from "./routes/AuthenticationRoutes";
-import listRoutes from "./routes/ListRoutes";
-import articleRoutes from "./routes/blog/ArticleRoutes";
-import couponRoutes from "./routes/CouponRoutes";
 var cors = require('cors');
 
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
-// mongoose.connect("mongodb://jwoo:jwoo@ds151451.mlab.com:51451/aca-test");
 // mongoose.connect("mongodb://localhost/bogobyzip");
 mongoose.connect("mongodb://localhost/WestBankPools");
 
@@ -28,12 +24,9 @@ app.options('*', cors());
 app.use(bodyParser.json());
 
 app.use(authenticationRoutes);
-app.use(couponRoutes);
 
 const authStrategy = passport.authenticate("authStrategy", { session: false });
 app.use(authStrategy);
-app.use(listRoutes);
-app.use(articleRoutes);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
