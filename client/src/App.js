@@ -28,8 +28,8 @@ function App() {
       <Faqs />
       <AboutUs />
       <Contact />
-      <Footer />
       <CreateNewProject />
+      <Footer />
     </div>
   )
 }

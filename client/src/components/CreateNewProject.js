@@ -69,6 +69,7 @@ class CreateNewProject extends React.Component {
 // When project name entered, it will show in red, without input box.
     var addProjectName = "";
     if(!this.state.projectNamed === true && this.state.loggedIn === true) {
+      window.scroll(0,230);
       addProjectName = (
         <div className="borderShadow padInsides">
           <button
@@ -86,7 +87,8 @@ class CreateNewProject extends React.Component {
             <div className="padtop3">
               <input
                 autoFocus
-                placeholder="Name  *required*"
+                size="30"
+                placeholder="Name    *required*"
                 onChange={(e) => {
                   const project = {projName: e.target.value};
                   this.setState({
@@ -97,10 +99,10 @@ class CreateNewProject extends React.Component {
             </div>
             <div className="padtop2 padbottom">
               <textarea
-                placeholder="Description  *required*  maxLength=1000 chars"
+                placeholder="Description    *required*    maxLength=1000 chars"
                 maxLength="1000"
                 rows="4"
-                cols="50"
+                cols="30"
                 onChange={(e) => {
                   const projCaption = {caption: e.target.value};
                   this.setState({
@@ -113,7 +115,7 @@ class CreateNewProject extends React.Component {
                 {this.state.projects.caption.length}/1000
               </div>
             </div>
-            <button>Name the project</button>
+            <button>Create new project</button>
           </form>
         </div>
       );
@@ -151,13 +153,18 @@ class CreateNewProject extends React.Component {
       }
 
     return (
+      <div>
       <div className="container">
-        <div className="projboxx d-flex float-right"
-          onClick={ () => {
-            this.setState({secBoxClicked: true});
-            this.props.setPage('');
-          } }>
+        <div className="row d-flex float-right">
+          <div className="projboxx"
+            onClick={ () => {
+              this.setState({secBoxClicked: true});
+              this.props.setPage('');
+            } }></div>
         </div>
+      </div>
+
+      <div className="container">
         <div className='row'>
           <div className="col-sm-8 offset-sm-2">
             <div className="">{signIn}</div>
@@ -166,6 +173,7 @@ class CreateNewProject extends React.Component {
           </div>
         </div>
       </div>
+    </div>
     )
   }
 }
