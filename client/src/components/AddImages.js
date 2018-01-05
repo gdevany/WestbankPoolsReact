@@ -20,7 +20,6 @@ class AddImages extends React.Component {
   removeExtension(fullName) {
     var idx = fullName.indexOf(".");
     var withoutExt = fullName.slice(0,idx);
-    console.log(withoutExt);
     return withoutExt;
   }
 
@@ -38,11 +37,13 @@ class AddImages extends React.Component {
     }
 
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
-                     .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-                     .field('file', file)
-                     .field('tags', [tag])
-                     .field('context', `caption=${this.props.caption}`)
-                     .field('public_id', `wbp/projects/${this.props.project}/` + this.removeExtension(file.name));
+      .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+      .field('file', file)
+      .field('tags', [tag])
+      .field('context', `caption=${this.props.caption}`)
+      .field('public_id', `${this.props.cloudinaryFilePath}/${this.props.project}/`
+        + this.removeExtension(file.name));
+        
     upload.end((err, response) => {
       if (err) {
         console.error(err);

@@ -6,4 +6,5 @@ export default {
   projectChosen: "",
   pageSelected: "projects",
   logo: "WPlogo.png",
+  cloudinaryFilePath: "wpb/projects",
 }

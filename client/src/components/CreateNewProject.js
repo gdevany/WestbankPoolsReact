@@ -1,5 +1,5 @@
 import React from "react";
-import AddImages from './AddImages';
+import AddImages from '../containers/AddImagesContainer';
 
 
 class CreateNewProject extends React.Component {
