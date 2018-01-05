@@ -11,6 +11,7 @@ import Contact from './containers/ContactContainer';
 import Footer from './components/Footer';
 import CreateNewProject from './containers/CreateNewProjectContainer';
 import LoadProjects from './containers/LoadProjectsContainer';
+import LandingPage from './containers/LandingPageContainer';
 // const clKey = 934548452896616;
 
 // compoonentWillMount() {
@@ -23,6 +24,7 @@ function App() {
       <AppSign />
       <Logo />
       <Headings />
+      <LandingPage />
       <LoadProjects />
       <Process />
       <Faqs />

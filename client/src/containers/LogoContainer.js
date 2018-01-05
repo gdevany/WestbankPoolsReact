@@ -4,7 +4,8 @@ import Logo from '../components/Logo';
 
 function mapStateToProps(state) {
   return {
-    logo: state.logo
+    logo: state.logo,
+    pageSelected: state.pageSelected,
   }
 }
 

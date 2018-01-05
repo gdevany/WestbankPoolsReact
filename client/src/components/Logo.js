@@ -6,8 +6,9 @@ function Logo(props) {
     backgroundSize: 'contain'
   };
 
-  return(
-    <div className="container">
+  var viewIt = '';
+  if(props.pageSelected !== '') {
+    viewIt = (
       <div className="row">
         <div className="col-sm-6 offset-sm-3 col-lg-8 offset-lg-2">
           <div className="seclogo">
@@ -15,6 +16,12 @@ function Logo(props) {
           </div>
         </div>
       </div>
+    )
+  }
+
+  return(
+    <div className="container">
+      {viewIt}
     </div>
 
   )

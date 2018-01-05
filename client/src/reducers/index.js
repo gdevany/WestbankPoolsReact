@@ -36,6 +36,13 @@ function cloudinaryFilePath(state = "", action){
   return state;
 }
 
+function landingPic(state = "", action){
+  if(action.type === "LANDING_PIC") {
+    return action.type;
+  }
+  return state;
+}
+
 // Will change:
 function projectChosen(state = "", action){
   if(action.type === "PROJECT_CHOSEN"){
@@ -66,7 +73,7 @@ function loggedIn(state="", action) {
  }
 
 const rootReducer = combineReducers({
-  pages,cloudinaryPojectFile,projectMainImageTag,logo,cloudinaryFilePath,
+  pages,cloudinaryPojectFile,projectMainImageTag,logo,cloudinaryFilePath,landingPic,
   projectChosen,pageSelected,loggedIn,projects
 });
 export default rootReducer;

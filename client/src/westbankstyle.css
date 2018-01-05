@@ -85,6 +85,7 @@ a {
   font-size: 15px;
   padding: 0 1em;
   border-radius: 0;
+  margin-bottom: 0;
 }
 
 .navbar-toggler-icon {
@@ -127,6 +128,33 @@ a {
   height: 150px;
 }
 
+.landingPic {
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.landingText1 {
+  padding-top: 30px;
+}
+
+.landingText2 {
+  padding-top: 50px;
+}
+
+.topCentered {
+    position: absolute;
+    top: 7vh;
+    left: 65vw;
+    transform: translate(-30%, -50%);
+}
+
+.centered2 {
+    position: absolute;
+    top: 20vh;
+    left: 65vw;
+    transform: translate(-50%, -50%);
+}
+
 .bgcover {
   background-size: cover;
   width: 100%;
@@ -151,8 +179,8 @@ a {
 .projboxx {
   width: 20px;
   height: 20px;
-  background-color: red;
-  border: solid black;
+  /* background-color: red; */
+  /* border: solid black; */
 }
 
 .projimg {
