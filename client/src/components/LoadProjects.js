@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Image} from 'cloudinary-react';
 import ProjectInd from '../containers/ProjectIndContainer';
 
-
+// LANDING PAGE
 class LoadProjects extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +56,7 @@ class LoadProjects extends React.Component {
                  publicId={proj.public_id}
                  className="projimg">
                </Image>
+               <div className="d-flex justify-content-center padtop">{this.getProjectName(proj.public_id)}</div>
            </div>
          </div>
        </div>
