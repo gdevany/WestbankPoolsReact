@@ -22,6 +22,12 @@ function projectMainImageTag(state = "", action){
   return state;
 }
 
+function logo(state = "", action){
+  if(action.type === "LOGO") {
+    return action.type;
+  }
+  return state;
+}
 
 // Will change:
 function projectChosen(state = "", action){
@@ -53,7 +59,7 @@ function loggedIn(state="", action) {
  }
 
 const rootReducer = combineReducers({
-  pages,cloudinaryPojectFile,projectMainImageTag,
+  pages,cloudinaryPojectFile,projectMainImageTag,logo,
   projectChosen,pageSelected,loggedIn,projects
 });
 export default rootReducer;

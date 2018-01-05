@@ -84,6 +84,7 @@ a {
 .navbar {
   font-size: 15px;
   padding: 0 1em;
+  border-radius: 0;
 }
 
 .navbar-toggler-icon {
@@ -115,10 +116,10 @@ a {
 }
 
 .logoinit {
-  background: url("./pics/WPlogo.png") no-repeat center;
+  /* background: url("./pics/WPlogo.png") no-repeat center; */
   width: auto;
   height: 95%;
-  background-size: contain;
+  /* background-size: contain; */
 }
 
 .seclogo {

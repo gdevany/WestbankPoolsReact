@@ -5,4 +5,5 @@ export default {
   loggedIn: false,
   projectChosen: "",
   pageSelected: "projects",
+  logo: "WPlogo.png",
 }
