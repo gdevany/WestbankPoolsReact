@@ -13,7 +13,7 @@ function LandingPage(props) {
               alt="background"
               />
             <span className="topCentered white big">Does this remind you of home?</span>
-            <span className="centered2 white itally">....It should</span>
+            <span className="centered2 white big itally">....It should</span>
       </div>
     )
   } else return <div></div>

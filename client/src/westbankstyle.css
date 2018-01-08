@@ -29,6 +29,10 @@ a {
   font-style: italic;
 }
 
+.biggest {
+  font-size: 30px;
+}
+
 .bigger {
   font-size: 20px;
 }
@@ -150,7 +154,7 @@ a {
 
 .centered2 {
     position: absolute;
-    top: 20vh;
+    top: 25vh;
     left: 65vw;
     transform: translate(-50%, -50%);
 }
@@ -185,6 +189,7 @@ a {
 
 .projimg {
   width: 100%;
+  max-width: 300px;
   height: 200px;
   /*margin-bottom: 30px;*/
   padding: 5px;

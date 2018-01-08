@@ -5,7 +5,7 @@ export default {
   loggedIn: false,
   projectChosen: "",
   pageSelected: "",
-  logo: "WPlogo.png",
+  logo: "WPlogo3.png",
   cloudinaryFilePath: "wpb/projects",
   landingPic: "poolImage1.jpeg"
 }

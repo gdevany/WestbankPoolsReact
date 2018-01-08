@@ -12,7 +12,7 @@ function Contact(props) {
           <div className="row">
             <div className="offset-xs-1 col-xs-10 offset-md-2 col-md-8
               offset-lg-3 col-lg-6 projtitle padtop2">
-              <div className="big">Customer Satisfaction</div>
+              <div className="bigger">Customer Satisfaction</div>
               <div className="text-left">
                 Our overall mission is customer satisfaction. From the first meeting
                 until the customer jumps in the water, we want to make sure they
@@ -21,7 +21,7 @@ function Contact(props) {
             </div>
             <div className="row">
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big red">
+                <div className="bigger red">
                   <i className="fa fa-phone" aria-hidden="true"></i>phone
                 </div>
                 <div className="">
@@ -29,7 +29,7 @@ function Contact(props) {
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big red">
+                <div className="bigger red">
                   <i className="fa fa-envelope-o" aria-hidden="true"></i>email
                 </div>
                 <div className="">
@@ -37,7 +37,7 @@ function Contact(props) {
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big red">
+                <div className="bigger red">
                   <i className="fa fa-twitter" aria-hidden="true"></i>twitter
                 </div>
                 <div className="">

@@ -21,7 +21,7 @@ function Process(props) {
             </div>
             <div className="row">
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big black">plan it</div>
+                <div className="big black red">plan it</div>
                 <div className="">
                   Planning phase can really be broken down to 3 steps. First we
                   all agree upon an architectural plan for the pool and surrounding
@@ -36,7 +36,7 @@ function Process(props) {
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big black">let's do this</div>
+                <div className="big black red">let's do this</div>
                 <div className="">
                   Breaking ground is exciting. This means theres no turning back
                   now, unless you just want a big hole in the ground. Our crews
@@ -47,7 +47,7 @@ function Process(props) {
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big black">build it</div>
+                <div className="big black red">build it</div>
                 <div className="">
                   The entire construction process involves many contractors- site
                   prep (digging the hole), steel workers (rebar, landscape planters,
@@ -57,7 +57,7 @@ function Process(props) {
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big black">when can we jump in?</div>
+                <div className="big black red">when can we jump in?</div>
                 <div className="">
                   When the construction is in the final stages, we will be on-site
                   almost daily to make sure the customer is satisfied with all

@@ -48,7 +48,7 @@ class ProjectInd extends React.Component {
 // Map thru project pics (this.state.gallery) to show
     var viewIt = "";
     if(this.props.projectChosen !== "" && this.props.pageSelected === "projects") {
-      window.scroll(0,230);
+      // window.scroll(0,230);
       viewIt = this.state.gallery.map(image => {
         return(
           <Image
@@ -68,13 +68,12 @@ class ProjectInd extends React.Component {
     return(
       <div className="container">
         <div className="row black padtop">
-          <div className="projIndimg">{this.showFullSizeImage()}
-          </div>
-          <div className="offset-sm-1 col-sm-8 offset-lg-1 col-lg-4 d-flex text-left flex-column">
-            <div className="bigger projtitle">{this.props.projectChosen}</div>
+          <div className="projIndimg">{this.showFullSizeImage()}</div>
+          <div className="offset-sm-1 col-sm-8 offset-md-1 col-md-5 d-flex text-left flex-column">
+            <div className="biggest projtitle">{this.props.projectChosen}</div>
             <div className="padtop2 padbottom">{showDesc}</div>
           </div>
-          <div className="col-sm-12 offset-lg-1 col-lg-5 d-flex flex-column justify-content-center">
+          <div className="col-sm-12 col-md-5 d-flex flex-column justify-content-center">
             <div>Click image to view full size</div>
             <div>{viewIt}</div>
           </div>
