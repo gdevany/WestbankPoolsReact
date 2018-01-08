@@ -4,7 +4,8 @@ import {Image} from 'cloudinary-react';
 
 // SHOW IF: <ProjectInd /> calls it
 function ShowFullSizeImage(props) {
-  window.scroll(0,230);
+  console.log(props);
+  window.scroll(0,30);
   return(
     <div>
       <Image
@@ -12,6 +13,10 @@ function ShowFullSizeImage(props) {
         publicId={props.image}
         className="projIndimg"
         ></Image>
+      <span
+        className="topRight white biggest"
+        onClick={props.toggleShow}
+        >X</span>
     </div>
   )
 }

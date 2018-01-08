@@ -146,17 +146,23 @@ a {
 }
 
 .topCentered {
-    position: absolute;
-    top: 7vh;
-    left: 65vw;
-    transform: translate(-30%, -50%);
+  position: absolute;
+  top: 7vh;
+  left: 65vw;
+  transform: translate(-30%, -50%);
+}
+
+.topRight {
+  position: absolute;
+  top: 9vh;
+  right: 9vw;
 }
 
 .centered2 {
-    position: absolute;
-    top: 25vh;
-    left: 65vw;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 25vh;
+  left: 65vw;
+  transform: translate(-50%, -50%);
 }
 
 .bgcover {

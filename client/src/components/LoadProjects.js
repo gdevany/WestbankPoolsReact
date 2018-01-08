@@ -34,8 +34,15 @@ class LoadProjects extends React.Component {
     return projName;
   }
 
-  render() {
+  showProjInd = () => {
+    if(this.props.projectChosen !== '') {
+      return (
+        <ProjectInd />
+      )
+    } else return <div></div>
+  }
 
+  render() {
 // SHOW IF: 'projects' page is selected (default)
     var viewIt = "";
     var projs = "";
@@ -48,15 +55,18 @@ class LoadProjects extends React.Component {
         key={proj.public_id}>
          <div className="d-flex flex-column">
            <div className="projbox">
-               <Image
-                 onClick={() => {
-                   this.props.setProjectChosen(this.getProjectName(proj.public_id));
-                 }}
-                 cloudName="gdevany"
-                 publicId={proj.public_id}
-                 className="projimg">
-               </Image>
-               <div className="d-flex justify-content-center padtop">{this.getProjectName(proj.public_id)}</div>
+             <Image
+               onClick={() => {
+                 this.props.setProjectChosen(this.getProjectName(proj.public_id));
+               }}
+               cloudName="gdevany"
+               publicId={proj.public_id}
+               style={{cursor:'pointer'}}
+               className="projimg">
+             </Image>
+             <div className="d-flex justify-content-center padtop">
+               {this.getProjectName(proj.public_id)}
+             </div>
            </div>
          </div>
        </div>
@@ -79,7 +89,7 @@ class LoadProjects extends React.Component {
           </div>
         </div>
       </div>
-     </div>
+    </div>
     )
   }
 }

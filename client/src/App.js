@@ -1,6 +1,6 @@
 import React from 'react';
 import './westbankstyle.css';
-import AppSign from './containers/AppSignContainer';
+// import AppSign from './containers/AppSignContainer';
 import Logo from './containers/LogoContainer';
 import Headings from './containers/HeadingsContainer';
 // import Projects from './containers/ProjectsContainer';

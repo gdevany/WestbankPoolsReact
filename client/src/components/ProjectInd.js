@@ -32,8 +32,15 @@ class ProjectInd extends React.Component {
       // this.state.imageViewerClicked === false ?
       // null : <ImageViewer imageList={this.state.gallery} />
       this.state.imageViewerClicked === false ?
-      null : <ShowFullSizeImage image={this.state.imageClicked} />
+        null :
+        <ShowFullSizeImage
+          image={this.state.imageClicked}
+          toggleShow={this.toggleImageViewerClicked}/>
     )
+  }
+
+  toggleImageViewerClicked = () => {
+    this.setState({imageViewerClicked: !this.state.imageViewerClicked})
   }
 
   render() {
@@ -53,7 +60,8 @@ class ProjectInd extends React.Component {
         return(
           <Image
             onClick={() => {
-              this.setState({imageViewerClicked: true, imageClicked:image.public_id});
+              this.setState({imageClicked:image.public_id});
+              this.toggleImageViewerClicked();
             }}
             cloudName="gdevany"
             publicId={image.public_id}
@@ -73,7 +81,7 @@ class ProjectInd extends React.Component {
             <div className="biggest projtitle">{this.props.projectChosen}</div>
             <div className="padtop2 padbottom">{showDesc}</div>
           </div>
-          <div className="col-sm-12 col-md-5 d-flex flex-column justify-content-center">
+          <div className="col-sm-12 col-md-5 d-flex flex-column text-center">
             <div>Click image to view full size</div>
             <div>{viewIt}</div>
           </div>
