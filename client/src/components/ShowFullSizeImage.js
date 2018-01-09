@@ -16,6 +16,7 @@ function ShowFullSizeImage(props) {
         <span
           className="topRight white biggest"
           onClick={props.toggleShow}
+          style={{cursor:'pointer'}}
           >X
         </span>
       </div>
