@@ -17,7 +17,7 @@ class LoadProjects extends React.Component {
 // PRELOAD PROJECTS tagged as (this.props.projectMainImageTag) from cloudinary
   componentWillMount() {
     axios.get(
-      `https://res.cloudinary.com/gdevany/image/list/${this.state.projectMainImageTag}.json`
+      `https://res.cloudinary.com/${this.props.cloudName}/image/list/${this.state.projectMainImageTag}.json`
     )
       .then(res => {
         this.setState({gallery: res.data.resources});
@@ -43,7 +43,7 @@ class LoadProjects extends React.Component {
   }
 
   render() {
-// SHOW IF: 'projects' page is selected (default)
+// SHOW IF: 'projects' page is selected
     var viewIt = "";
     var projs = "";
     if(this.props.pageSelected === 'projects') {
@@ -58,8 +58,9 @@ class LoadProjects extends React.Component {
              <Image
                onClick={() => {
                  this.props.setProjectChosen(this.getProjectName(proj.public_id));
+                 this.props.setPageSelect('');
                }}
-               cloudName="gdevany"
+               cloudName={this.props.cloudName}
                publicId={proj.public_id}
                style={{cursor:'pointer'}}
                className="projimg">
@@ -74,11 +75,12 @@ class LoadProjects extends React.Component {
       return viewIt;
       })
     } else {
-      return <div></div>
+      viewIt = <div></div>
     }
 
     return(
      <div>{this.props.projectChosen === "" ? null : <ProjectInd />}
+          {this.props.pageSelected !== 'projects' ? null :
       <div className="container">
         <div className="row">
           <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
@@ -88,7 +90,7 @@ class LoadProjects extends React.Component {
             <div>{projs}</div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
     )
   }

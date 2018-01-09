@@ -9,7 +9,7 @@ function ShowFullSizeImage(props) {
   return(
     <div>
       <Image
-        cloudName="gdevany"
+        cloudName={props.cloudName}
         publicId={props.image}
         className="projIndimg"
         ></Image>

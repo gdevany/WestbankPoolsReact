@@ -5,7 +5,6 @@ import Contact from '../components/Contact';
 function mapStateToProps(state) {
   return {
     pageSelected: state.pageSelected,
-
   }
 }
 

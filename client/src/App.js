@@ -3,7 +3,6 @@ import './westbankstyle.css';
 // import AppSign from './containers/AppSignContainer';
 import Logo from './containers/LogoContainer';
 import Headings from './containers/HeadingsContainer';
-// import Projects from './containers/ProjectsContainer';
 import Process from './containers/ProcessContainer';
 import Faqs from './containers/FaqsContainer';
 import AboutUs from './containers/AboutUsContainer';
@@ -12,7 +11,6 @@ import Footer from './components/Footer';
 import CreateNewProject from './containers/CreateNewProjectContainer';
 import LoadProjects from './containers/LoadProjectsContainer';
 import LandingPage from './containers/LandingPageContainer';
-// const clKey = 934548452896616;
 
 // compoonentWillMount() {
 //

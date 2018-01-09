@@ -6,13 +6,13 @@ function mapStateToProps(state) {
   return {
     pageSelected: state.pageSelected,
     projectChosen: state.projectChosen,
-    images: state.images,
+    cloudName: state.cloudName,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    setProjChosen: (proj) => {
+    setProjectChosen: (proj) => {
       dispatch(setProjectChosen(proj))
     }
   }

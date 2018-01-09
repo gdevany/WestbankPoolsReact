@@ -29,6 +29,13 @@ function logo(state = "", action){
   return state;
 }
 
+function cloudName(state = "", action){
+  if(action.type === "CLOUD_NAME") {
+    return action.type;
+  }
+  return state;
+}
+
 function cloudinaryFilePath(state = "", action){
   if(action.type === "CFP") {
     return action.type;
@@ -74,6 +81,6 @@ function loggedIn(state="", action) {
 
 const rootReducer = combineReducers({
   pages,cloudinaryPojectFile,projectMainImageTag,logo,cloudinaryFilePath,landingPic,
-  projectChosen,pageSelected,loggedIn,projects
+  cloudName,projectChosen,pageSelected,loggedIn,projects
 });
 export default rootReducer;

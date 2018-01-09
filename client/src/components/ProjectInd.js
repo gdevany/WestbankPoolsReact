@@ -2,7 +2,7 @@ import React from 'react';
 // import ImageViewer from '../containers/ImageViewerContainer';
 import axios from 'axios';
 import {Image} from 'cloudinary-react';
-import ShowFullSizeImage from './ShowFullSizeImage';
+import ShowFullSizeImage from '../containers/ShowFullSizeImageContainer';
 
 
 // SHOW IF: (projectChosen) && (pageSelected === projects)
@@ -18,11 +18,11 @@ class ProjectInd extends React.Component {
 
 // Preload the list of 'TAGGED' projects from cloudinary
   componentWillMount() {
-      axios.get(`https://res.cloudinary.com/gdevany/image/list/${this.props.projectChosen}.json`)
-        .then(res => {
-          console.log(res.data.resources);
-          this.setState({gallery: res.data.resources});
-        })
+    axios.get(`https://res.cloudinary.com/${this.props.cloudName}/image/list/${this.props.projectChosen}.json`)
+      .then(res => {
+        console.log(res.data.resources);
+        this.setState({gallery: res.data.resources});
+      });
   }
 
 // SHOW IF: this.state.imageClicked === true
@@ -51,10 +51,10 @@ class ProjectInd extends React.Component {
       showDesc = this.state.gallery[0].context.custom.caption;
     }
 
-// SHOW IF: (projectChosen) && (pageSelected === projects)
+// SHOW IF: (projectChosen)
 // Map thru project pics (this.state.gallery) to show
     var viewIt = "";
-    if(this.props.projectChosen !== "" && this.props.pageSelected === "projects") {
+    if(this.props.projectChosen !== "") {
       // window.scroll(0,230);
       viewIt = this.state.gallery.map(image => {
         return(
@@ -63,7 +63,7 @@ class ProjectInd extends React.Component {
               this.setState({imageClicked:image.public_id});
               this.toggleImageViewerClicked();
             }}
-            cloudName="gdevany"
+            cloudName={this.props.cloudName}
             publicId={image.public_id}
             className="projIndimg"
             style={{cursor:'pointer'}}

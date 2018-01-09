@@ -4,8 +4,9 @@ export default {
   projectMainImageTag: "main",
   loggedIn: false,
   projectChosen: "",
-  pageSelected: "",
+  pageSelected: "landing",
   logo: "WPlogo3.png",
+  cloudName: "gdevany",
   cloudinaryFilePath: "wpb/projects",
   landingPic: "poolImage1.jpeg"
 }

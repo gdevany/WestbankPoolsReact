@@ -4,7 +4,7 @@ import React from 'react';
 function LandingPage(props) {
 // SHOW IF: pageSelected === ''
   var viewIt = '';
-  if(props.pageSelected === '') {
+  if(props.pageSelected === 'landing') {
     viewIt = (
       <div className="container">
             <img
