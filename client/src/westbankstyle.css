@@ -132,37 +132,37 @@ a {
   height: 150px;
 }
 
+.miniLogo {
+  width: auto;
+  height: 10vh;
+  position: absolute;
+  bottom: 7vh;
+  right: 4vw;
+}
+
 .landingPic {
   width: 100%;
   /* height: 100vh; */
 }
 
 .landingText1 {
-  padding-top: 30px;
-}
-
-.landingText2 {
-  padding-top: 50px;
-}
-
-.topCentered {
   position: absolute;
   top: 7vh;
   left: 65vw;
   transform: translate(-30%, -50%);
 }
 
-.topRight {
-  position: absolute;
-  top: 9vh;
-  right: 9vw;
-}
-
-.centered2 {
+.landingText2 {
   position: absolute;
   top: 25vh;
   left: 65vw;
   transform: translate(-50%, -50%);
+}
+
+.topRight {
+  position: absolute;
+  top: 3vh;
+  right: 7vw;
 }
 
 .bgcover {

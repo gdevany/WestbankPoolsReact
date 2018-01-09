@@ -4,7 +4,8 @@ import ShowFullSizeImage from '../components/ShowFullSizeImage';
 
 function mapStateToProps(state) {
   return {
-    cloudName: state.cloudName
+    cloudName: state.cloudName,
+    logo: state.logo
   }
 }
 
