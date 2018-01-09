@@ -147,16 +147,16 @@ a {
 
 .landingText1 {
   position: absolute;
-  top: 7vh;
-  left: 65vw;
-  transform: translate(-30%, -50%);
+  /* top: 7vh; */
+  left: 50vw;
+  transform: translate(-0%, -0%);
 }
 
 .landingText2 {
   position: absolute;
   top: 25vh;
-  left: 65vw;
-  transform: translate(-50%, -50%);
+  left: 50vw;
+  transform: translate(-0%, -0%);
 }
 
 .topRight {

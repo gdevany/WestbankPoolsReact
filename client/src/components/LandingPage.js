@@ -13,8 +13,8 @@ window.scroll(0,0);
               className="landingPic"
               alt="background"
               />
-            <span className="landingText1 white big">Does this remind you of home?</span>
-            <span className="landingText2 white big itally">....It should</span>
+            <span className="landingText1 white bigger">Does this remind you of home?</span>
+            <span className="landingText2 white bigger itally">....It should</span>
       </div>
     )
   } else return <div></div>
