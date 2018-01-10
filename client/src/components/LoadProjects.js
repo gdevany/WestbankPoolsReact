@@ -51,10 +51,9 @@ class LoadProjects extends React.Component {
       projs = this.state.gallery.map(proj => {
       viewIt = (
        <div
-        className="col-xs-12 offset-sm-0 col-sm-6 offset-md-0 col-md-4 padbottom2"
+        className="col-xs-12 col-sm-6 col-md-4 padbottom2"
         key={proj.public_id}>
-         <div className="d-flex flex-column">
-           <div className="projbox">
+        <div className="d-flex flex-column align-items-center">
              <Image
                onClick={() => {
                  this.props.setProjectChosen(this.getProjectName(proj.public_id));
@@ -63,13 +62,13 @@ class LoadProjects extends React.Component {
                cloudName={this.props.cloudName}
                publicId={proj.public_id}
                style={{cursor:'pointer'}}
-               className="projimg">
+               className="projimg projbox">
              </Image>
-             <div className="d-flex justify-content-center padtop">
+             <div className="padtop">
                {this.getProjectName(proj.public_id)}
              </div>
-           </div>
          </div>
+
        </div>
       )
       return viewIt;
@@ -87,7 +86,7 @@ class LoadProjects extends React.Component {
             <div className="bigger d-flex text-left padtop3">projects</div>
           </div>
           <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
-            <div>{projs}</div>
+            <div className="padtop2">{projs}</div>
           </div>
         </div>
       </div>}
