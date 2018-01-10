@@ -13,8 +13,10 @@ window.scroll(0,0);
               className="landingPic"
               alt="background"
               />
-            <span className="landingText1 white bigger">Does this remind you of home?</span>
-            <span className="landingText2 white bigger itally">....It should</span>
+            <span className="">
+            <img src={require('../pics/WBPhome.png')} className="landingTextImage1" />
+            <img src={require('../pics/WBPshould.png')} className="landingTextImage2" />
+            </span>
       </div>
     )
   } else return <div></div>
@@ -27,3 +29,6 @@ window.scroll(0,0);
 }
 
 export default LandingPage;
+
+// <span className="landingText1 white bigger">Does this remind you of home?</span>
+// <span className="landingText2 white bigger itally">....It should</span>
