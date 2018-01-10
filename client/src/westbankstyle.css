@@ -255,6 +255,10 @@ a {
   overflow: hidden;
 }
 
+.fullSize {
+  width: 100%;
+}
+
 li {
   padding-left: 30px;
 }

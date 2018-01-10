@@ -71,7 +71,7 @@ class CreateNewProject extends React.Component {
     if(!this.state.projectNamed === true && this.state.loggedIn === true) {
       window.scroll(0,230);
       addProjectName = (
-        <div className="borderShadow padInsides">
+        <div className="fullSize borderShadow padInsides d-flex align-items-center flex-column">
           <button
             className="backButton padtop2"
             onClick={ () => {
@@ -80,7 +80,7 @@ class CreateNewProject extends React.Component {
             }}>back
           </button>
           <h1 className="padtop2">Create New Project</h1>
-          <form className="padbottom2" onSubmit={(e) => {
+          <form className="padbottom2 d-flex align-items-center flex-column" onSubmit={(e) => {
             e.preventDefault();
             this.projectNameAdded();
           }}>
@@ -155,7 +155,7 @@ class CreateNewProject extends React.Component {
     return (
       <div>
       <div className="container">
-        <div className="row d-flex float-right">
+        <div className="row float-right">
           <div className="projboxx"
             onClick={ () => {
               this.setState({secBoxClicked: true});
@@ -165,11 +165,14 @@ class CreateNewProject extends React.Component {
       </div>
 
       <div className="container">
-        <div className='row'>
-          <div className="col-sm-8 offset-sm-2">
+        <div className='row justify-content-center'>
+          <div className="col-8 d-flex justify-content-center">
             <div className="">{signIn}</div>
+
             {addProjectName}
+
             {addImageBox}
+
           </div>
         </div>
       </div>
