@@ -19,6 +19,7 @@ import LandingPage from './containers/LandingPageContainer';
 function App() {
   return (
     <div className="App currentfont padbottom2">
+      <AppSign />
       <Logo />
       <Headings />
       <LandingPage />

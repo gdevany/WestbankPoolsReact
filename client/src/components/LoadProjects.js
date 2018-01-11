@@ -83,7 +83,7 @@ class LoadProjects extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
-            <div className="bigger d-flex text-left padtop3">projects</div>
+            <div className="bigger d-flex text-left padtop2">projects</div>
           </div>
           <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
             <div className="padtop2">{projs}</div>
