@@ -1,6 +1,6 @@
 import AppSign from '../AppSign';
 import {connect} from 'react-redux';
-import {loadUser, loadUsersCoupons} from '../actions';
+import {loadUser,} from '../actions';
 
 
 function mapDispatchToProps(dispatch) {
@@ -8,9 +8,6 @@ function mapDispatchToProps(dispatch) {
     loadUser(user) {
       dispatch(loadUser(user))
     },
-    loadUsersCoupons(user) {
-      dispatch(loadUsersCoupons(user))
-    }
   }
 }
 
