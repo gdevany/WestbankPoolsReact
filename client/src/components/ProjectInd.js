@@ -5,7 +5,7 @@ import {Image} from 'cloudinary-react';
 import ShowFullSizeImage from '../containers/ShowFullSizeImageContainer';
 
 
-// SHOW IF: (projectChosen) && (pageSelected === projects)
+// SHOW IF: (projectChosen) 
 class ProjectInd extends React.Component {
   constructor(props) {
     super(props);

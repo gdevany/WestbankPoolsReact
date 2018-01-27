@@ -214,7 +214,6 @@ a {
   height: 200px;
   /*margin-bottom: 30px;*/
   padding: 5px;
-  image-rendering: pixelated;
 }
 
 .imgAddConfirm {

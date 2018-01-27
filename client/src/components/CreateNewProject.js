@@ -29,7 +29,7 @@ class CreateNewProject extends React.Component {
     if(this.state.pword === '' ||
       this.state.pword === undefined ||
       this.state.pword.length < 10) {
-        alert('You shouldnt be here');
+        // alert('You shouldnt be here');
         this.setState({secBoxClicked: false});
         this.logOut();
         this.props.setPage('projects');
@@ -166,7 +166,7 @@ class CreateNewProject extends React.Component {
 
       <div className="container">
         <div className='row justify-content-center'>
-          <div className="col-8 d-flex justify-content-center">
+          <div className="col-8 d-flex flex-column align-items-center">
             <div className="">{signIn}</div>
 
             {addProjectName}

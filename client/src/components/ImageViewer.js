@@ -21,8 +21,8 @@ class ImageViewer extends React.Component {
 
   render() {
     console.log(this.state.gallery);
-    var viewIt = "";
-    var images = [];
+    let viewIt = "";
+    let images = [];
 
     // map out images for the projectSelected (props.imageList from ProjectInd)
     this.state.gallery.map(i => {
