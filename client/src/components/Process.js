@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 
 function Process(props) {
-// SHOW IF: props.pageSelected = 'process'
-  var viewIt = "";
-  if(props.pageSelected === 'process') {
+// SHOW IF: props.pageSelected = "process"
+  let viewIt = "";
+  if (props.pageSelected === "process") {
     window.scroll(0,0);
     viewIt = (
       <div>
@@ -36,11 +36,11 @@ function Process(props) {
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big black red">let's do this</div>
+                <div className="big black red">let"s do this</div>
                 <div className="">
                   Breaking ground is exciting. This means theres no turning back
                   now, unless you just want a big hole in the ground. Our crews
-                  are trained to use our 'small footprint' policy at all times.
+                  are trained to use our "small footprint" policy at all times.
                   We minimize construction paths, remove non-essential equipment
                   and materials, and clean up the construction site at the end of
                   each working day.
@@ -53,7 +53,7 @@ function Process(props) {
                   prep (digging the hole), steel workers (rebar, landscape planters,
                   etc), finishers (gunite, concrete, etc), tile and/or brick layers,
                   plumbers, and electricians. Westbank pools uses only trusted
-                  and bonded contractors which we've worked with for many years.
+                  and bonded contractors which we"ve worked with for many years.
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
@@ -61,7 +61,7 @@ function Process(props) {
                 <div className="">
                   When the construction is in the final stages, we will be on-site
                   almost daily to make sure the customer is satisfied with all
-                  aspects of the project. Once it's complete, our owner Brian
+                  aspects of the project. Once it"s complete, our owner Brian
                   Richardson will personally walk you through all the equipment
                   and give you a personal pool school so you know how to keep it
                   ready for parties every day of the year.
@@ -71,14 +71,15 @@ function Process(props) {
           </div>
         </div>
       </div>
-    )
-  } else return <div></div>
+    );
+  } else {return <div />;}
 
   return (
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 justify-content-between">
+          <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8
+            justify-content-between">
             <div className="bigger projtitle d-flex text-left padtop2">
               process
             </div>
@@ -87,7 +88,7 @@ function Process(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Process;

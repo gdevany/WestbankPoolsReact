@@ -9,4 +9,4 @@ export default {
   cloudName: "gdevany",
   cloudinaryFilePath: "wpb/projects",
   landingPic: "poolImage1.jpeg"
-}
+};

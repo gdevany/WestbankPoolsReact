@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
-import ImageGallery from 'react-image-gallery';
-import {Image} from 'cloudinary-react';
+import ImageGallery from "react-image-gallery";
+import {Image} from "cloudinary-react";
 
 // NOTE: THIS IMAGEVIEWER WILL NOT READ <Image> FILES FROM CLOUDINARY
 // NOTE: https://glitch.com/edit/#!/cloudinary-react-sdk?path=src/app.js:1:0
@@ -12,7 +12,7 @@ class ImageViewer extends React.Component {
     super(props);
     this.state = {
       gallery: []
-    }
+    };
   }
 
   componentWillMount() {
@@ -26,37 +26,33 @@ class ImageViewer extends React.Component {
 
     // map out images for the projectSelected (props.imageList from ProjectInd)
     this.state.gallery.map(i => {
-      return(
+      return (
         // images = [...images, {original:require(`../pics/${i.url}`),
         //   thumbnail:require(`../pics/${i.url}`)}]
           images = [...images, {
-            original:
-            <Image cloudName="gdevany" publicId={i.public_id}></Image>,
-            thumbnail:
-            <Image cloudName="gdevany" publicId={i.public_id}></Image>
+            original: <Image cloudName="gdevany" publicId={i.public_id} />,
+            thumbnail: <Image cloudName="gdevany" publicId={i.public_id} />
           }]
-      )
-    })
-    if(this.props.projectChosen !== "" && this.state.gallery.length >= 1) {
+      );
+    });
+    if (this.props.projectChosen !== "" && this.state.gallery.length >= 1) {
       console.log({images});
       window.scroll(0,230);
       viewIt = (
         // <ImageGallery items={images} />
-        <ImageGallery items={[{original:
-        <Image cloudName="gdevany" publicId={this.state.gallery[0].public_id}></Image>,
-        thumbnail:
-        <Image cloudName="gdevany" publicId={this.state.gallery[0].public_id}></Image>}]} />
+        <ImageGallery
+          items={[{
+            original: <Image cloudName="gdevany"
+              publicId={this.state.gallery[0].public_id} />,
+            thumbnail: <Image cloudName="gdevany"
+              publicId={this.state.gallery[0].public_id} />}]} />
 
-      )
-    } else {
-      viewIt = <div></div>
-    }
+          );
+    } else {viewIt = <div />;}
 
     return (
-      <div>
-      {viewIt}
-    </div>
-    )
+      <div>{viewIt}</div>
+    );
   }
 }
 

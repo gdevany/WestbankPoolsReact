@@ -1,11 +1,11 @@
-import React from 'react';
-// import ImageViewer from '../containers/ImageViewerContainer';
-import axios from 'axios';
-import {Image} from 'cloudinary-react';
-import ShowFullSizeImage from '../containers/ShowFullSizeImageContainer';
+import React from "react";
+// import ImageViewer from "../containers/ImageViewerContainer";
+import axios from "axios";
+import {Image} from "cloudinary-react";
+import ShowFullSizeImage from "../containers/ShowFullSizeImageContainer";
 
 
-// SHOW IF: (projectChosen) 
+// SHOW IF: (projectChosen)
 class ProjectInd extends React.Component {
   constructor(props) {
     super(props);
@@ -13,10 +13,10 @@ class ProjectInd extends React.Component {
       gallery: [],
       imageViewerClicked: false,
       imageClicked: "",
-    }
+    };
   }
 
-// Preload the list of 'TAGGED' projects from cloudinary
+// Preload the list of "TAGGED" projects from cloudinary
   componentWillMount() {
     axios.get(`https://res.cloudinary.com/${this.props.cloudName}/image/list/${this.props.projectChosen}.json`)
       .then(res => {
@@ -28,52 +28,51 @@ class ProjectInd extends React.Component {
 // SHOW IF: this.state.imageClicked === true
 // show full size rendering (<ShowFullSizeImage />)
   showFullSizeImage = () => {
-    return(
+    return (
       // this.state.imageViewerClicked === false ?
       // null : <ImageViewer imageList={this.state.gallery} />
       this.state.imageViewerClicked === false ?
         null :
         <ShowFullSizeImage
           image={this.state.imageClicked}
-          toggleShow={this.toggleImageViewerClicked}/>
-    )
+          toggleShow={this.toggleImageViewerClicked} />
+      );
   }
 
   toggleImageViewerClicked = () => {
-    this.setState({imageViewerClicked: !this.state.imageViewerClicked})
+    this.setState({imageViewerClicked: !this.state.imageViewerClicked});
   }
 
   render() {
 // SHOW IF: state.gallery is loaded with ProjectChosen image links
 // Get project description
-    var showDesc = "";
-    if(this.state.gallery.length > 0) {
+    let showDesc = "";
+    if (this.state.gallery.length > 0) {
       showDesc = this.state.gallery[0].context.custom.caption;
     }
 
 // SHOW IF: (projectChosen)
 // Map thru project pics (this.state.gallery) to show
-    var viewIt = "";
-    if(this.props.projectChosen !== "") {
+    let viewIt = "";
+    if (this.props.projectChosen !== "") {
       // window.scroll(0,230);
       viewIt = this.state.gallery.map(image => {
-        return(
+        return (
           <Image
             onClick={() => {
-              this.setState({imageClicked:image.public_id});
+              this.setState({imageClicked: image.public_id});
               this.toggleImageViewerClicked();
             }}
             cloudName={this.props.cloudName}
             publicId={image.public_id}
             className="projIndimg"
-            style={{cursor:'pointer'}}
-            key={image.public_id}>
-          </Image>
-        )
-      })
-    } else return <div></div>
+            style={{cursor: "pointer"}}
+            key={image.public_id} />
+        );
+      });
+    } else {return <div />;}
 
-    return(
+    return (
       <div className="container">
         <div className="row black padtop">
           <div className="projIndimg">{this.showFullSizeImage()}</div>
@@ -87,7 +86,7 @@ class ProjectInd extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

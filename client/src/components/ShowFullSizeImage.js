@@ -1,22 +1,22 @@
-import React from 'react';
-import {Image} from 'cloudinary-react';
+import React from "react";
+import {Image} from "cloudinary-react";
 
 
 // SHOW IF: <ProjectInd /> calls it
 function ShowFullSizeImage(props) {
   window.scroll(0,190);
-  return(
+  return (
     <div className="container">
       <Image
         cloudName={props.cloudName}
         publicId={props.image}
         className="projIndimg"
-        ></Image>
+        />
       <div className="row">
         <span
-          className="topRight white biggest"
+          className="topRight white biggest shadow"
           onClick={props.toggleShow}
-          style={{cursor:'pointer'}}
+          style={{cursor: "pointer"}}
           >X
         </span>
       </div>
@@ -28,7 +28,7 @@ function ShowFullSizeImage(props) {
         />
       </div>
     </div>
-  )
+  );
 }
 
 export default ShowFullSizeImage;
