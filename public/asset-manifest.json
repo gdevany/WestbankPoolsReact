@@ -1,7 +1,19 @@
 {
-  "main.css": "static/css/main.20fc3c96.css",
-  "main.css.map": "static/css/main.20fc3c96.css.map",
-  "main.js": "static/js/main.92fcd67d.js",
-  "main.js.map": "static/js/main.92fcd67d.js.map",
-  "static/media/Color1970s.png": "static/media/Color1970s.4546fdfd.png"
+  "main.css": "static/css/main.1e110472.css",
+  "main.css.map": "static/css/main.1e110472.css.map",
+  "main.js": "static/js/main.d024fe5e.js",
+  "main.js.map": "static/js/main.d024fe5e.js.map",
+  "static/media/WBPhome.png": "static/media/WBPhome.68bdd7eb.png",
+  "static/media/WBPshould.png": "static/media/WBPshould.bf5cc5be.png",
+  "static/media/WPlogo.png": "static/media/WPlogo.912d4a7c.png",
+  "static/media/WPlogo2.png": "static/media/WPlogo2.ab260496.png",
+  "static/media/WPlogo3.png": "static/media/WPlogo3.2b106d61.png",
+  "static/media/fontawesome-webfont.eot?v=4.7.0": "static/media/fontawesome-webfont.674f50d2.eot",
+  "static/media/fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
+  "static/media/fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
+  "static/media/fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
+  "static/media/fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff",
+  "static/media/poolImage1.jpeg": "static/media/poolImage1.ec2928b7.jpeg",
+  "static/media/poolImage2.jpeg": "static/media/poolImage2.4204262a.jpeg",
+  "static/media/poolImage3.jpg": "static/media/poolImage3.93695c68.jpg"
 }

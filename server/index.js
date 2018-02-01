@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import passport from "passport";
 import authenticationRoutes from "./routes/AuthenticationRoutes";
-var cors = require('cors');
+const cors = require("cors");
 
 
 mongoose.set("debug", true);
@@ -14,12 +14,12 @@ mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost/bogobyzip");
 mongoose.connect("mongodb://localhost/WestBankPools");
 
-//mongoose.connect("mongodb://gdevany:gdevany@ds133964.mlab.com:33964/bogobyzip");
+// mongoose.connect("mongodb://gdevany:gdevany@ds133964.mlab.com:33964/bogobyzip");
 
 const app = express();
 app.use(express.static("public"));
 app.use(cors());
-app.options('*', cors());
+app.options("*", cors());
 
 app.use(bodyParser.json());
 
