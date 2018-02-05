@@ -28,12 +28,12 @@ function Headings(props) {
   })
   return (
     <nav className="navbar navbar-toggleable-sm d-flex justify-content-center">
-        <div className="d-flex justify-content-center">
+        <div className="d-flex">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarnavdropdown" aria-controls="navbarnavdropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon black currentfont">menu</span>
           </button>
-          <div className="collapse navbar-collapse justify-content-center" id="navbarnavdropdown">
-            <ul className="navbar-nav">
+          <div className="collapse navbar-collapse" id="navbarnavdropdown">
+            <ul className="navbar-nav tight">
               {viewIt}
             </ul>
           </div>

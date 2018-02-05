@@ -1,7 +1,7 @@
-import React from 'react';
-import axios from 'axios';
-import {Image} from 'cloudinary-react';
-import ProjectInd from '../containers/ProjectIndContainer';
+import React from "react";
+import axios from "axios";
+import {Image} from "cloudinary-react";
+import ProjectInd from "../containers/ProjectIndContainer";
 
 // LANDING PAGE
 class LoadProjects extends React.Component {
@@ -11,7 +11,7 @@ class LoadProjects extends React.Component {
       gallery: [],
       projectFile: this.props.cloudinaryPojectFile,
       projectMainImageTag: this.props.projectMainImageTag,
-    }
+    };
   }
 
 // PRELOAD PROJECTS tagged as (this.props.projectMainImageTag) from cloudinary
@@ -21,32 +21,32 @@ class LoadProjects extends React.Component {
     )
       .then(res => {
         this.setState({gallery: res.data.resources});
-      })
+      });
   }
 
 // REMOVE FILE EXTENSION
 // Take the full file name of project selected, and extract the project name.
 // This will be used to set the project selected (props.ProjectChosen)
   getProjectName = (fileName) => {
-    var projPlusFileName = fileName.slice(this.state.projectFile.length);
-    var idx = projPlusFileName.indexOf("/");
-    var projName = projPlusFileName.slice(0, idx);
+    const projPlusFileName = fileName.slice(this.state.projectFile.length);
+    const idx = projPlusFileName.indexOf("/");
+    const projName = projPlusFileName.slice(0, idx);
     return projName;
   }
 
   showProjInd = () => {
-    if(this.props.projectChosen !== '') {
+    if (this.props.projectChosen !== "") {
       return (
         <ProjectInd />
-      )
-    } else return <div></div>
+      );
+    }
   }
 
   render() {
-// SHOW IF: 'projects' page is selected
-    var viewIt = "";
+// SHOW IF: "projects" page is selected
+    let viewIt = "";
     var projs = "";
-    if(this.props.pageSelected === 'projects') {
+    if(this.props.pageSelected === "projects") {
       window.scroll(0,0);
       projs = this.state.gallery.map(proj => {
       viewIt = (
@@ -57,41 +57,41 @@ class LoadProjects extends React.Component {
              <Image
                onClick={() => {
                  this.props.setProjectChosen(this.getProjectName(proj.public_id));
-                 this.props.setPageSelect('');
+                 this.props.setPageSelect("");
                }}
                cloudName={this.props.cloudName}
                publicId={proj.public_id}
-               style={{cursor:'pointer'}}
+               style={{cursor:"pointer"}}
                className="projimg projbox">
              </Image>
-             <div className="padtop">
+          <div className="padtop">
                {this.getProjectName(proj.public_id)}
              </div>
-         </div>
+        </div>
 
        </div>
-      )
-      return viewIt;
-      })
+     );
+        return viewIt;
+      });
     } else {
-      viewIt = <div></div>
+      viewIt = <div />;
     }
 
-    return(
-     <div>{this.props.projectChosen === "" ? null : <ProjectInd />}
-          {this.props.pageSelected !== 'projects' ? null :
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
-            <div className="bigger d-flex text-left padtop2">projects</div>
+    return (
+      <div>{this.props.projectChosen === "" ? null : <ProjectInd />}
+        {this.props.pageSelected !== "projects" ? null :
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
+              <div className="bigger spread d-flex text-left padtop2">projects</div>
+            </div>
+            <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
+              <div className="padtop2">{projs}</div>
+            </div>
           </div>
-          <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
-            <div className="padtop2">{projs}</div>
-          </div>
-        </div>
-      </div>}
-    </div>
-    )
+        </div>}
+      </div>
+    );
   }
 }
 

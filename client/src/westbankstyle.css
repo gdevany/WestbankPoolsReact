@@ -1,7 +1,7 @@
 body {
   background-color: #FDFDFD;
   font-size: 12px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 a {
@@ -43,6 +43,14 @@ a {
 
 .smaller {
   font-size: 12px;
+}
+
+.spread {
+  letter-spacing: 0.1em;
+}
+
+.tight {
+  letter-spacing: 0em;
 }
 
 .fade-half {
@@ -260,7 +268,7 @@ a {
 }
 
 li {
-  padding-left: 30px;
+  padding: 0 15px;
 }
 
 .uppercase {
