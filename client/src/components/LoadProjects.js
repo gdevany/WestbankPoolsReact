@@ -45,31 +45,30 @@ class LoadProjects extends React.Component {
   render() {
 // SHOW IF: "projects" page is selected
     let viewIt = "";
-    var projs = "";
-    if(this.props.pageSelected === "projects") {
+    let projs = "";
+    if (this.props.pageSelected === "projects") {
       window.scroll(0,0);
       projs = this.state.gallery.map(proj => {
-      viewIt = (
-       <div
-        className="col-xs-12 col-sm-6 col-md-4 padbottom2"
-        key={proj.public_id}>
-        <div className="d-flex flex-column align-items-center">
-             <Image
-               onClick={() => {
-                 this.props.setProjectChosen(this.getProjectName(proj.public_id));
-                 this.props.setPageSelect("");
-               }}
-               cloudName={this.props.cloudName}
-               publicId={proj.public_id}
-               style={{cursor:"pointer"}}
-               className="projimg projbox">
-             </Image>
-          <div className="padtop">
-               {this.getProjectName(proj.public_id)}
-             </div>
-        </div>
+        viewIt = (
+          <div
+            className="col-xs-12 col-sm-6 col-md-4 padbottom2"
+            key={proj.public_id}>
+            <div className="d-flex flex-column align-items-center">
+              <Image
+                onClick={() => {
+                  this.props.setProjectChosen(this.getProjectName(proj.public_id));
+                  this.props.setPageSelect("");
+                }}
+                cloudName={this.props.cloudName}
+                publicId={proj.public_id}
+                style={{cursor: "pointer"}}
+                className="projimg projbox" />
+              <div className="padtop">
+                {this.getProjectName(proj.public_id)}
+              </div>
+            </div>
 
-       </div>
+          </div>
      );
         return viewIt;
       });

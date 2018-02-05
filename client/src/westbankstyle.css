@@ -45,6 +45,10 @@ a {
   font-size: 12px;
 }
 
+.raiseIt {
+  margin-top: -25px;
+}
+
 .spread {
   letter-spacing: 0.1em;
 }

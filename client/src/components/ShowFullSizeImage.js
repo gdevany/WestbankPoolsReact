@@ -4,7 +4,7 @@ import {Image} from "cloudinary-react";
 
 // SHOW IF: <ProjectInd /> calls it
 function ShowFullSizeImage(props) {
-  window.scroll(0,190);
+  window.scroll(0,130);
   return (
     <div className="container">
       <Image
