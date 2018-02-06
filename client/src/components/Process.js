@@ -36,7 +36,7 @@ function Process(props) {
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
-                <div className="big black red">let"s do this</div>
+                <div className="big black red">let's do this</div>
                 <div className="">
                   Breaking ground is exciting. This means theres no turning back
                   now, unless you just want a big hole in the ground. Our crews
@@ -53,7 +53,7 @@ function Process(props) {
                   prep (digging the hole), steel workers (rebar, landscape planters,
                   etc), finishers (gunite, concrete, etc), tile and/or brick layers,
                   plumbers, and electricians. Westbank pools uses only trusted
-                  and bonded contractors which we"ve worked with for many years.
+                  and bonded contractors which we've worked with for many years.
                 </div>
               </div>
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
@@ -61,7 +61,7 @@ function Process(props) {
                 <div className="">
                   When the construction is in the final stages, we will be on-site
                   almost daily to make sure the customer is satisfied with all
-                  aspects of the project. Once it"s complete, our owner Brian
+                  aspects of the project. Once it's complete, our owner Brian
                   Richardson will personally walk you through all the equipment
                   and give you a personal pool school so you know how to keep it
                   ready for parties every day of the year.

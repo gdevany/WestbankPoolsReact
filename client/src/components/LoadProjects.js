@@ -81,11 +81,11 @@ class LoadProjects extends React.Component {
         {this.props.pageSelected !== "projects" ? null :
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
-              <div className="bigger spread d-flex text-left padtop2">projects</div>
+            <div className="col-sm-10 offset-sm-1 offset-lg-2 col-lg-8 projtitle">
+              <div className="bigger spread text-left padtop2">projects</div>
             </div>
-            <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 projtitle">
-              <div className="padtop2">{projs}</div>
+            <div className="col-sm-10 offset-sm-1 offset-lg-2 col-lg-8 padtop2">
+              {projs}
             </div>
           </div>
         </div>}
