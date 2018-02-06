@@ -34,14 +34,6 @@ class LoadProjects extends React.Component {
     return projName;
   }
 
-  showProjInd = () => {
-    if (this.props.projectChosen !== "") {
-      return (
-        <ProjectInd />
-      );
-    }
-  }
-
   render() {
 // SHOW IF: "projects" page is selected
     let viewIt = "";
@@ -53,7 +45,7 @@ class LoadProjects extends React.Component {
           <div
             className="col-xs-12 col-sm-6 col-md-4 padbottom2"
             key={proj.public_id}>
-            <div className="d-flex flex-column align-items-center">
+            <div className="align-items-center">
               <Image
                 onClick={() => {
                   this.props.setProjectChosen(this.getProjectName(proj.public_id));
@@ -67,7 +59,6 @@ class LoadProjects extends React.Component {
                 {this.getProjectName(proj.public_id)}
               </div>
             </div>
-
           </div>
      );
         return viewIt;
@@ -80,11 +71,13 @@ class LoadProjects extends React.Component {
       <div>{this.props.projectChosen === "" ? null : <ProjectInd />}
         {this.props.pageSelected !== "projects" ? null :
         <div className="container">
-          <div className="row">
-            <div className="col-sm-10 offset-sm-1 offset-lg-2 col-lg-8 projtitle">
-              <div className="bigger spread text-left padtop2">projects</div>
+          <div className="col-sm-10 offset-sm-1 offset-lg-2 col-lg-8">
+            <div className="row projtitle">
+              <div className="bigger spread text-left padtop2">
+                projects
+              </div>
             </div>
-            <div className="col-sm-10 offset-sm-1 offset-lg-2 col-lg-8 padtop2">
+            <div className="row padtop2 projtitle">
               {projs}
             </div>
           </div>

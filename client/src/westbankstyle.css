@@ -216,8 +216,8 @@ a {
 .projboxx {
   width: 20px;
   height: 20px;
-  /* background-color: red; */
-  /* border: solid black; */
+  background-color: red;
+  border: solid black;
 }
 
 .projimg {
