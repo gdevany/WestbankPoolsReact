@@ -159,7 +159,7 @@ a {
 
 .landingSticky {
   position: sticky;
-  top: 50px;
+  top: 0px;
 }
 
 .landingTextImage1 {
