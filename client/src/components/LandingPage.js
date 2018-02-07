@@ -28,7 +28,7 @@ function LandingPage(props) {
   } else {return <div />;}
 
   return (
-    <div className="container">
+    <div className="">
       {viewIt}
     </div>
   );

@@ -141,8 +141,8 @@ a {
 }
 
 .seclogo {
-  width: 100%;
-  height: 150px;
+  width: 50%;
+  height: 120px;
 }
 
 .miniLogo {
@@ -155,6 +155,11 @@ a {
 
 .landingPic {
   width: 100%;
+}
+
+.landingSticky {
+  position: sticky;
+  top: 50px;
 }
 
 .landingTextImage1 {

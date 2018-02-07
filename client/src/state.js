@@ -8,5 +8,5 @@ export default {
   logo: "WPlogo3.png",
   cloudName: "gdevany",
   cloudinaryFilePath: "wpb/projects",
-  landingPic: "poolImage1.jpeg"
+  landingPic: "poolImage3.jpg"
 };

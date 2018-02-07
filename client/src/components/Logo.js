@@ -10,7 +10,7 @@ function Logo(props) {
   if(props.pageSelected !== 'fdgsdf') {
     viewIt = (
       <div className="row">
-        <div className="col-sm-6 offset-sm-3 col-lg-8 offset-lg-2">
+        <div className=" d-flex justify-content-center col-12">
           <div className="seclogo">
             <div style={logoImg} className="logoinit"></div>
           </div>
@@ -20,7 +20,7 @@ function Logo(props) {
   }
 
   return(
-    <div className="container">
+    <div className="container landingSticky">
       {viewIt}
     </div>
 
