@@ -71,5 +71,6 @@
     "superagent": "^3.8.2",
     "whatwg-fetch": "^2.0.3"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "homepage": "http://gdevany.github.io/WestbankPoolsReact"
 }
