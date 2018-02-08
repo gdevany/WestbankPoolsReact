@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 // SHOW ALWAYS: Will act as Router for pages.
 function Headings(props) {
@@ -6,8 +8,8 @@ function Headings(props) {
 // Map pages and show. If onClick, show that page and Bold Heading page name.
   let viewIt = "";
   let boldIt = "";
-  viewIt = props.pages.map((p,i) =>{
-    boldIt = (props.pageSelected === p) ? "nav-link fade-bold" : "nav-link"
+  viewIt = props.pages.map((p,i) => {
+    boldIt = (props.pageSelected === p) ? "nav-link fade-bold" : "nav-link";
     return (
       <li className="nav-item dropdown" key={i}>
         <div
@@ -49,5 +51,11 @@ function Headings(props) {
     </nav>
   );
 }
+
+Headings.propTypes = {
+  pages: PropTypes.array.isRequired,
+  pageSelected: PropTypes.string.isRequired,
+
+};
 
 export default Headings;

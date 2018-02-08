@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 
 function Process(props) {
@@ -23,7 +24,7 @@ function Process(props) {
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big black red">plan it</div>
                 <div className="">
-                  Planning phase can really be broken down to 3 steps. First we
+                  planning phase can really be broken down to 3 steps. First we
                   all agree upon an architectural plan for the pool and surrounding
                   landscaping. We use the best in the business for backyard design
                   and the latest in cad to bring these ideas to life. Once the design
@@ -90,5 +91,9 @@ function Process(props) {
     </div>
   );
 }
+
+Process.propTypes = {
+  pageSelected: PropTypes.string.isRequired,
+};
 
 export default Process;

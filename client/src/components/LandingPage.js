@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 
 function LandingPage(props) {
@@ -9,7 +10,7 @@ function LandingPage(props) {
     viewIt = (
       <div className="container">
         <img
-          src={require(`../pics/${props.landingPic}`) }
+          src={require(`../pics/${props.landingPic}`)}
           className="landingPic"
           alt="background"
           />
@@ -33,6 +34,12 @@ function LandingPage(props) {
     </div>
   );
 }
+
+LandingPage.propTypes = {
+  pageSelected: PropTypes.string.isRequired,
+  landingPic: PropTypes.string.isRequired,
+
+};
 
 export default LandingPage;
 

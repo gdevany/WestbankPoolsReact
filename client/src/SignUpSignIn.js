@@ -34,12 +34,13 @@ class SignUpSignIn extends Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }
 
 SignUpSignIn.propTypes = {
   error: PropTypes.string,
+  backClicked: PropTypes.bool.isRequired,
   onSignUp: PropTypes.func.isRequired,
   onSignIn: PropTypes.func.isRequired
 };

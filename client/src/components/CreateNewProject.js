@@ -1,5 +1,6 @@
 import React from "react";
 import AddImages from "../containers/AddImagesContainer";
+import PropTypes from "prop-types";
 
 
 class CreateNewProject extends React.Component {
@@ -179,5 +180,9 @@ class CreateNewProject extends React.Component {
     );
   }
 }
+
+CreateNewProject.propTypes = {
+  setPage: PropTypes.func.isRequired,
+};
 
 export default CreateNewProject;

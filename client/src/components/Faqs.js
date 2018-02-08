@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 
 function Faqs(props) {
-// SHOW IF: props.pageSelected = 'faqs'
-  var viewIt = "";
-  if(props.pageSelected === 'faqs') {
+// SHOW IF: props.pageSelected = "faqs"
+  let viewIt = "";
+  if (props.pageSelected === "faqs") {
     window.scroll(0,0);
     viewIt = (
       <div>
@@ -23,7 +24,7 @@ function Faqs(props) {
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big red">how do we plan the design of the pool?</div>
                 <div className="">
-                  Our in house designers will walk you through the process using
+                  our in house designers will walk you through the process using
                   state of the art digital cad. We will determine if a straight
                   edge or free form design works better.
                 </div>
@@ -31,7 +32,7 @@ function Faqs(props) {
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big red">how much does the pool cost?</div>
                 <div className="">
-                  Every pool has it's own challenges during the construction
+                  every pool has it's own challenges during the construction
                   process. Our experienced project estimators have a track record
                   of 8% difference between estimates and actual costs.
                 </div>
@@ -39,7 +40,7 @@ function Faqs(props) {
               <div className="col-xs-12 offset-lg-1 col-lg-10 text-left padtop3">
                 <div className="big red">can we pay for the pool on our credit card?</div>
                 <div className="">
-                  We have had several customers pay for their phase drafts on their
+                  we have had several customers pay for their phase drafts on their
                   credit cards. However, there will be an additional cost to cover
                   the interchange costs.
                 </div>
@@ -48,21 +49,25 @@ function Faqs(props) {
           </div>
         </div>
       </div>
-    )
-  } else return <div></div>
+    );
+  } else {return <div />;}
 
   return (
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 justify-content-between">
-            <div className="bigger projtitle d-flex text-left padtop2">faq's</div>
+          <div className="col-xs-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8">
+            <div className="bigger projtitle d-flex text-left padtop2">faq"s</div>
             <div>{viewIt}</div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
+
+Faqs.propTypes = {
+  pageSelected: PropTypes.string.isRequired,
+};
 
 export default Faqs;

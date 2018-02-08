@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import {Image} from "cloudinary-react";
 import ProjectInd from "../containers/ProjectIndContainer";
+import PropTypes from "prop-types";
 
 // LANDING PAGE
 class LoadProjects extends React.Component {
@@ -86,5 +87,15 @@ class LoadProjects extends React.Component {
     );
   }
 }
+
+LoadProjects.propTypes = {
+  cloudinaryPojectFile: PropTypes.string.isRequired,
+  projectMainImageTag: PropTypes.string.isRequired,
+  cloudName: PropTypes.string.isRequired,
+  pageSelected: PropTypes.string.isRequired,
+  setProjectChosen: PropTypes.func.isRequired,
+  setPageSelect: PropTypes.func.isRequired,
+  projectChosen: PropTypes.string.isRequired,
+};
 
 export default LoadProjects;

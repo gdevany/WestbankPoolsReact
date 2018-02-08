@@ -1,9 +1,10 @@
 // This module not in use currently
+/* eslint-disable */
 
-import {connect} from 'react-redux';
-import {handleSignIn, handleSignOut, handleSignUp, handleSubmit} from './actions';
-import AppSign from './AppSign';
-import App from './App';
+import {connect} from "react-redux";
+import {handleSignIn, handleSignOut, handleSignUp, handleSubmit} from "./actions";
+import AppSign from "./AppSign";
+import App from "./App";
 
 
 function mapDispatchToProps(dispatch) {

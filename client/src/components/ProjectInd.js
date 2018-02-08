@@ -3,6 +3,7 @@ import React from "react";
 import axios from "axios";
 import {Image} from "cloudinary-react";
 import ShowFullSizeImage from "../containers/ShowFullSizeImageContainer";
+import PropTypes from "prop-types";
 
 
 // SHOW IF: (projectChosen)
@@ -20,6 +21,7 @@ class ProjectInd extends React.Component {
   componentWillMount() {
     axios.get(`https://res.cloudinary.com/${this.props.cloudName}/image/list/${this.props.projectChosen}.json`)
       .then(res => {
+        //eslint-disable-next-line
         console.log(res.data.resources);
         this.setState({gallery: res.data.resources});
       });
@@ -89,5 +91,10 @@ class ProjectInd extends React.Component {
     );
   }
 }
+
+ProjectInd.propTypes = {
+  cloudName: PropTypes.string.isRequired,
+  projectChosen: PropTypes.string.isRequired,
+};
 
 export default ProjectInd;

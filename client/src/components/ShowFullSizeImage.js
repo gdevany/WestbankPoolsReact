@@ -1,5 +1,6 @@
 import React from "react";
 import {Image} from "cloudinary-react";
+import PropTypes from "prop-types";
 
 
 // SHOW IF: <ProjectInd /> calls it
@@ -30,5 +31,12 @@ function ShowFullSizeImage(props) {
     </div>
   );
 }
+
+ShowFullSizeImage.propTypes = {
+  cloudName: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  toggleShow: PropTypes.func.isRequired,
+  logo: PropTypes.string.isRequired,
+};
 
 export default ShowFullSizeImage;

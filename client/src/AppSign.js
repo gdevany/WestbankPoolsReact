@@ -4,6 +4,8 @@ import "./AppSign.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./TopNavbar";
 import Secret from "./Secret";
+// import PropTypes from "prop-types";
+
 
 class AppSign extends Component {
   constructor() {
@@ -35,7 +37,7 @@ class AppSign extends Component {
       }).then((res) => {
         return res.json();
       }).then((data) => {
-        if(data.error){
+        if (data.error) {
           this.setState({
             signUpSignInError: data.error
           });
@@ -78,8 +80,8 @@ class AppSign extends Component {
           authenticated: token,
           username: data.username
         });
-        this.props.loadUser(this.state.username);
-        this.props.loadUsersCoupons(this.state.username);
+    //    this.props.loadUser(this.state.username);
+    //    this.props.loadUsersCoupons(this.state.username);
 
       });
     }
@@ -107,9 +109,9 @@ class AppSign extends Component {
   }
 
   signInClicked = () => {
-   this.setState(prevState => ({
-     clickedSignIn: !prevState.clickedSignIn
-   }));
+    this.setState(prevState => ({
+      clickedSignIn: !prevState.clickedSignIn
+    }));
   }
 
   renderApp() {
@@ -153,5 +155,10 @@ class AppSign extends Component {
     );
   }
 }
+
+AppSign.propTypes = {
+//  loadUser: PropTypes.func.isRequired,
+//  loadUsersCoupons: PropTypes.func.isRequired,
+};
 
 export default AppSign;

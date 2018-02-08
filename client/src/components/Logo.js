@@ -1,54 +1,38 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+
 
 function Logo(props) {
   const logoImg = {
-    background: 'url(' + require(`../pics/${props.logo}`) + ') no-repeat center',
-    backgroundSize: 'contain'
+    background: "url(" + require(`../pics/${props.logo}`) + ") no-repeat center",
+    backgroundSize: "contain"
   };
 
-  var viewIt = '';
-  if(props.pageSelected !== 'fdgsdf') {
+  let viewIt = "";
+  if (props.pageSelected !== "fdgsdf") {
     viewIt = (
       <div className="row">
         <div className=" d-flex justify-content-center col-12">
           <div className="seclogo">
-            <div style={logoImg} className="logoinit"></div>
+            <div style={logoImg} className="logoinit" />
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  return(
+  return (
     <div className="container landingSticky">
       {viewIt}
     </div>
 
-  )
+  );
 }
 
+Logo.propTypes = {
+  logo: PropTypes.string.isRequired,
+  pageSelected: PropTypes.string.isRequired,
+
+};
+
 export default Logo;
-
-// const stylePic = {
-//          background: 'url(' + require(`../pics/${p.url}`) + ') no-repeat center'
-//        };
-
-
-// import React from 'react';
-//
-// function Logo() {
-//   return(
-//     <div className="container">
-//       <div className="row">
-//         <div className="col-sm-6 offset-sm-3 col-lg-8 offset-lg-2">
-//           <div className="seclogo">
-//             <div className="logoinit"></div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//
-//   )
-// }
-//
-// export default Logo;

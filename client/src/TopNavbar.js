@@ -10,17 +10,17 @@ const TopNavbar = (props) => {
   if (props.showNavItems) {
     // If signed in (authenticated), show Welcome
     navItems = (
-                <Nav pullRight>
-                  <NavItem onClick={props.onSignOut}>Sign Out</NavItem>
-                </Nav>
-              );
+      <Nav pullRight>
+        <NavItem onClick={props.onSignOut}>Sign Out</NavItem>
+      </Nav>
+    );
   } else {
     // If NOT signed in (authenticated), show Sign In
     navItems = (
-        <Nav pullRight>
-          <NavItem onClick={props.signInClicked}>Sign Up / Sign In</NavItem>
-        </Nav>
-    )
+      <Nav pullRight>
+        <NavItem onClick={props.signInClicked}>Sign Up / Sign In</NavItem>
+      </Nav>
+    );
   }
 
   return (
@@ -37,9 +37,8 @@ const TopNavbar = (props) => {
 
 TopNavbar.propTypes = {
   onSignOut: PropTypes.func.isRequired,
-  // showNavItems: PropTypes.bool.isRequired,
-  signInClicked:PropTypes.func.isRequired
+  showNavItems: PropTypes.bool,
+  signInClicked: PropTypes.func.isRequired
 };
 
 export default TopNavbar;
-// navbar-fixed-top
