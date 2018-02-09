@@ -13,7 +13,9 @@
     "copy-assets": "mkdir -p ./public && cp -R ./client/build/* ./public",
     "compile-server": "rm -rf ./dist && babel server --out-dir dist",
     "pre-deploy": "npm run compile-server && npm run build-client && npm run clean-assets && npm run copy-assets",
-    "start": "node ./dist/index"
+    "deploy" : "npm run build&&gh-pages -d build",
+    "start": "node ./dist/index",
+    "webpack": "webpack"
   },
   "keywords": [],
   "author": "Greg Devany",
@@ -37,6 +39,7 @@
     "eslint-plugin-babel": "^4.1.0",
     "eslint-plugin-react": "^6.10.0",
     "foreman": "^2.0.0",
+    "gh-pages": "^1.1.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
