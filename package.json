@@ -13,7 +13,7 @@
     "copy-assets": "mkdir -p ./public && cp -R ./client/build/* ./public",
     "compile-server": "rm -rf ./dist && babel server --out-dir dist",
     "pre-deploy": "npm run compile-server && npm run build-client && npm run clean-assets && npm run copy-assets",
-    "deploy" : "npm run build&&gh-pages -d build",
+    "deploy" : "gh-pages -b master -d build",
     "start": "node ./dist/index",
     "webpack": "webpack"
   },
